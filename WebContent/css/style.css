@@ -1,0 +1,129 @@
+.toptitle {
+    background-color: skyblue;
+    text-align: center;
+    padding: 20px;
+    margin: 0;
+}
+
+/* サイドバーのスタイル */
+.sidebar {
+    float: left;
+    width: 25%; /* サイドバーの幅 */
+    padding: 20px;
+    background-color: #f0f0f0; /* 背景色 */
+    text-align: left; /* テキストを左寄せにする */
+
+}
+.sidebar .score-gakusei-link ul.sub-menu {
+    margin-top: 10px; /* 任意のスペース */
+}
+
+.sidebar .score-seiseki-link ul.sub-menu {
+    margin-top: 10px; /* 任意のスペース */
+}
+.sidebar .score-kamoku-link ul.sub-menu  {
+    margin-top: 10px; /* 任意のスペース */
+}
+
+
+.sidebar h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #333; /* リンクの色 */
+}
+
+.sidebar ul li a:hover {
+    color: #555; /* マウスオーバー時の色 */
+}
+
+/* メインコンテンツのスタイル */
+.main-content {
+    margin-left: 25%; /* サイドバーの幅に合わせて調整 */
+    padding: 20px;
+}
+
+/* メニュー項目のスタイル */
+.menu {
+    display: flex;
+    justify-content: center; /* 中央揃え */
+    margin-top: 10px;
+}
+
+.menu-item {
+    margin: 10px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.3s ease;
+}
+
+.menu-item a {
+    display: block;
+    padding: 10px;
+    background-color: #f4f4f4; /* メニューの背景色 */
+    color: #333; /* メニューテキストの色 */
+    text-decoration: none;
+}
+
+.menu-item a:hover {
+    background-color: #ddd; /* マウスオーバー時の背景色 */
+}
+
+/* 学生管理のスタイル */
+.student-management {
+    border: 2px solid red;
+}
+
+/* 成績管理のスタイル */
+.score-management {
+    border: 2px solid green;
+}
+
+/* 科目管理のスタイル */
+.subject-management {
+    border: 2px solid blue;
+}
+
+/* フッターのスタイル */
+footer {
+    background-color: #d3d3d3; /* フッターの背景色 */
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+footer p {
+    margin: 0;
+    color: #333;
+    font-size: 14px;
+}
+
+/* ページ全体のスタイル */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    text-align: center;
+}
