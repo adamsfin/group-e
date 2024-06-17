@@ -9,7 +9,7 @@ public class LoginAction extends Action{
 
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse res) throws Exception {
-
+		System.out.println("00");
 	}
 
 }
