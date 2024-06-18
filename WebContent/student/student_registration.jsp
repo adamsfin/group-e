@@ -14,7 +14,7 @@
 <head>
     <meta charset="UTF-8">
     <title>学生管理/新規登録</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
     <c:import url="/common/base.jsp">
