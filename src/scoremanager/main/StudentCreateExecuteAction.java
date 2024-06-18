@@ -19,7 +19,7 @@ public class StudentCreateExecuteAction extends Action{
 		Student student = new Student();
 
 		if (Character.isDigit(req.getParameter("entYear").charAt(0))) {
-			session.setAttribute("year_error", "入学年度を入力してください");
+			req.setAttribute("year_error", "入学年度を入力してください");
 			req.getRequestDispatcher("student/student_registration.jsp").forward(req, res);
 		}
 
