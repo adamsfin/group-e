@@ -6,7 +6,7 @@
 <%@page import="java.util.List,java.time.LocalDate" %>
 
 <% @SuppressWarnings("unchecked")
-	List<String> classNum = (List<String>)request.getAttribute("class_num_set");
+	List<String> classNum = (List<String>)session.getAttribute("class_num_set");
 	LocalDate date = LocalDate.now(); %>
 
 <!DOCTYPE html>
