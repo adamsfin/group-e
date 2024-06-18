@@ -15,20 +15,6 @@ import dao.TeacherDao;
 @WebServlet(urlPatterns={"/tester2"})
 public class Tester__2 extends HttpServlet {
 
-//	public void doGet (
-//		HttpServletRequest request, HttpServletResponse response
-//	) throws ServletException, IOException {
-//		try {
-////			TeacherDao tD = new TeacherDao();
-////			Teacher t = tD.get("admin");
-////			request.setAttribute("user", t);
-////			request.getRequestDispatcher("listaction").forward(request, response);
-//			request.getRequestDispatcher("/studentlistaction_test").forward(request, response);
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		}
-//	}
-
 	public void doGet (HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 
 		try{
