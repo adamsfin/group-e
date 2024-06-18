@@ -7,7 +7,8 @@
 	</c:param>
 
 	<c:param name="content">
-		<form>
+		<p>{loginerr_msg}</p>
+		<form action="Login.action" method="post">
 			<label for="id">ＩＤ</label>
 			<input type="text" name="id" placeholder="半角でご入力ください" pattern="^[0-9A-Za-z]+$" title="半角英数字" required="required">
 			<label for="password">パスワード</label>
