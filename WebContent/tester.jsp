@@ -10,6 +10,7 @@
 <a href="scoremanager.main.StudentList.action">リスト</a>
 <a href="scoremanager.main.StudentCreate.action">クリエイト</a>
 <a href="tester_StudentCreateAction">クリエイト2</a>
+<a href="scoremanager.Login.action">ログイン</a>
 <% if (errorMg!=null) { %>
 	<%= errorMg %>
 <% } %>
