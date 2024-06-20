@@ -11,6 +11,7 @@ public class TestUpdate extends Action {
 	@Override
 	public void execute ( HttpServletRequest req, HttpServletResponse res ) throws Exception {
 		HttpSession session = req.getSession();
+		session.setAttribute("", 0);
 
 	}
 
