@@ -12,28 +12,6 @@ import javax.servlet.http.HttpSession;
 @WebServlet(urlPatterns={"/tester"})
 public class Tester__ extends HttpServlet {
 
-//	public void doGet (
-//		HttpServletRequest request, HttpServletResponse response
-//	) throws ServletException, IOException {
-//		PrintWriter out = response.getWriter();
-//		Page.header(out);
-//		try {
-//			StudentDao sDao = new StudentDao();
-//			Student s = sDao.get("2231111");
-//
-//			out.println("<table border=1><tr>");
-//			out.println("<th>学生番号</th>");
-//			out.println("<th>学生名</th>");
-//			out.println("<th>クラス番号</th></tr>");
-//			out.println("<tr><td>"+s.getNo()+"</td>");
-//			out.println("<td>"+s.getName()+"</td>");
-//			out.println("<td>"+s.getClassNum()+"</td></tr></table>");
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		}
-//
-//	}
-
 	public void doGet (
 		HttpServletRequest request, HttpServletResponse response
 	) throws ServletException, IOException {
