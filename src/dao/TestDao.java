@@ -21,7 +21,7 @@ public class TestDao extends Dao {
 
 		try {
 			statement = connection.prepareStatement(
-				"select test.student_no,subject_cd,test.school_cd,test.no,point,test.class_num,update_date from test"
+				"select test.student_no,subject_cd,test.school_cd,test.no,point,test.class_num,update_date from test "
 				+ "join student on test.student_no=student.no where subject_cd=? and test.no=? and test.class_num=? and ent_year=?"
 			);
 			statement.setString(1, subject.getCd());
@@ -33,7 +33,7 @@ public class TestDao extends Dao {
 				StudentDao studentDao = new StudentDao();
 				SubjectDao subjectDao = new SubjectDao();
 				SchoolDao schoolDao = new SchoolDao();
-				while (rSet.next()) {
+				do {
 					Test test = new Test();
 					test.setStudent(studentDao.get(rSet.getString("student_no")));
 					test.setSubject(subjectDao.get(rSet.getString("subject_cd")));
@@ -42,7 +42,8 @@ public class TestDao extends Dao {
 					test.setPoint(rSet.getInt("point"));
 					test.setClassNum(rSet.getString("class_num"));
 					test.setUpdateDate(rSet.getDate("update_date"));
-				}
+					list.add(test);
+				} while (rSet.next());
 			} else {
 				list = null;
 			}
