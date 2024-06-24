@@ -23,7 +23,7 @@ public class TestUpdateAction extends Action {
 		SubjectDao subjectDao = new SubjectDao();
 		List<Test> list = testDao.filter(2023, "131", subjectDao.get("A02"), 1);
 		for (Test test : list) {
-			System.out.printf(test.getStudent().getNo());
+			System.out.println(test.getStudent().getNo());
 		}
 		PrintWriter out = res.getWriter();
 		Page.header(out);
