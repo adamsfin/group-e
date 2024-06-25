@@ -21,8 +21,9 @@ public class TestDao extends Dao {
 
 		try {
 			statement = connection.prepareStatement(
-				"select test.student_no,subject_cd,test.school_cd,test.no,point,test.class_num,update_date from test "
-				+ "join student on test.student_no=student.no where subject_cd=? and test.no=? and test.class_num=? and ent_year=?"
+				"select test.student_no,subject_cd,test.school_cd,test.no,point,test.class_num,update_date"
+				+ " from test join student on test.student_no=student.no"
+				+ " where subject_cd=? and test.no=? and test.class_num=? and ent_year=?"
 			);
 			statement.setString(1, subject.getCd());
 			statement.setInt(2, no);
