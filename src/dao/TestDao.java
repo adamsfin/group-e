@@ -125,11 +125,12 @@ public class TestDao extends Dao {
 	public boolean save(List<Test> list) throws Exception {
 		Connection connection = getConnection();
 		PreparedStatement statement = null;
+		Test old = null;
 		int count = 0;
 
 		try {
 			for (Test test : list) {
-				Test old = get(test);
+				old = get(test);
 				if (old == null) {
 					statement = connection.prepareStatement(
 						"insert into test(student_no, subject_cd, school_cd, no, point, class_num, update_date) values(?, ?, ?, ?, ?, ?, ?)");
