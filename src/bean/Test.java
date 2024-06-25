@@ -34,7 +34,7 @@ public class Test implements java.io.Serializable {
 
 	public void setClassNum(String classNum) { this.classNum = classNum; }
 
-	public String ClassNum() { return classNum; }
+	public String getClassNum() { return classNum; }
 
 	public void setUpdateDate(Date updateDate) { this.updateDate = updateDate; }
 
