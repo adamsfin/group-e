@@ -2,6 +2,6 @@
 <html>
 <body>
 <h3>エラーページです。</h3>
-<h2>ばーか</h2>
+<h2>aaaa</h2>
 </body>
 </html>
