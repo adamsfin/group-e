@@ -53,7 +53,7 @@ public class TeacherDao extends Dao {
 	public Teacher login(String id, String password) throws Exception {
 		Teacher teacher = get(id);
 
-		if (teacher != null && teacher.getPassword() != password) {
+		if (teacher != null && !(teacher.getPassword().equals(password))) {
 			teacher = null;
 		}
 
