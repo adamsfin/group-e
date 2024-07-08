@@ -22,7 +22,7 @@ public class SubjectDao extends Dao {
 		PreparedStatement statement = null;
 
 		try {
-		statement = connection.prepareStatement("select * from suject where cd=?");
+		statement = connection.prepareStatement("select * from subject where cd=?");
 		statement.setString(1, cd);
 		ResultSet rSet = statement.executeQuery();
 		SchoolDao schoolDao = new SchoolDao();
@@ -64,7 +64,7 @@ public class SubjectDao extends Dao {
 		PreparedStatement statement = null;
 		ResultSet rSet = null;
 		String condition = "and cd=? and name=?";
-		String order = " order by no asc";
+		String order = " order by cd asc";
 		String conditionIsAttend = "";
 
 		try {
@@ -115,13 +115,13 @@ public class SubjectDao extends Dao {
 			Subject old = get(subject.getCd(), school);
 			if (old == null) {
 				statement = connection.prepareStatement(
-					"insert into subject(cd, school_cd, name) values(?, ?, ?)");
+					"insert into subject(cd, name, school_cd) values(?, ?, ?)");
 				statement.setString(1, subject.getCd());
 				statement.setString(2, subject.getName());
 				statement.setString(3, subject.getSchool().getCd());
 			} else {
 				statement = connection.prepareStatement(
-					"update student set name=?, Cd=?, where no=?");
+					"update subject set name=?, Cd=?, where no=?");
 				statement.setString(1, subject.getName());
 				statement.setString(2, subject.getCd());
 			}
