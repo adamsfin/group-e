@@ -19,9 +19,7 @@ public class SubjectCreateAction extends Action{
 		Teacher teacher = (Teacher)session.getAttribute("user");
 		System.out.print(teacher);
 
-
-
-		request.getRequestDispatcher("subject_create.jsp").forward(request, response);
+		request.getRequestDispatcher("/scoremanager/main/subject_create.jsp").forward(request, response);
 
 
 
