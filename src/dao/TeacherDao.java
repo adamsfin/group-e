@@ -72,7 +72,7 @@ public class TeacherDao extends Dao {
 
 		if (teacher != null && !(teacher.getPassword().equals(password))) {
 			teacher = null;
-
+			}
 		}
 
 		st.close();
@@ -81,6 +81,6 @@ public class TeacherDao extends Dao {
 
 		return teacher;
 
-		}
+
 	}
 }
