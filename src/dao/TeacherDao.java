@@ -61,11 +61,13 @@ public class TeacherDao extends Dao {
 		st.setString(1, id);
 		st.setString(2, password);
 		ResultSet rs=st.executeQuery();
+		SchoolDao schoolDao = new SchoolDao();
 
 		while (rs.next()) {
 			teacher=new Teacher();
 			teacher.setId(rs.getString("id"));
 			teacher.setPassword(rs.getString("password"));
+			teacher.setSchool(schoolDao.get(rs.getString("school_cd")));
 		}
 
 		st.close();
