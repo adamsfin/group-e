@@ -58,22 +58,81 @@ public class SubjectDao extends Dao {
 
 
 	}
+
+	public List<Subject> searchSubjects() throws Exception {
+
+		    // 空のリストを作成して、検索結果を格納する準備をします
+
+		    List<Subject> list = new ArrayList<>();
+
+		    // データベースとの接続を確立します
+
+		    Connection con = getConnection();
+
+		    // SQLクエリを準備します
+
+		    PreparedStatement st = con.prepareStatement(
+
+		            "select * from subject");
+
+		    // クエリを実行し、その結果を取得します
+
+		    ResultSet rs = st.executeQuery();
+
+		    // 取得した結果を1行ずつ処理します
+
+		    while (rs.next()){
+
+		        // 新しいSubjectオブジェクトを作成します
+
+		        Subject subject = new Subject();
+
+		        // ResultSetからデータを取得して、Subjectオブジェクトに設定します
+
+		        subject.setCd(rs.getString("cd"));
+
+		        subject.setName(rs.getString("name"));
+
+		        // 学校情報を取得して、Subjectオブジェクトに設定します
+
+		        School school = new School();
+
+		        subject.setSchool(school);
+
+		        // リストにSubjectオブジェクトを追加します
+
+		        list.add(subject);
+
+		    }
+
+		    // 使用が終わったPreparedStatementとConnectionを閉じます
+
+		    st.close();
+
+		    con.close();
+
+		    // 最終的にSubjectのリストを返します
+
+		    return list;
+
+		}
+
+
 	public List<Subject> filter(School school) throws Exception{
 		List<Subject> list = new ArrayList<>();
 		Connection connection = getConnection();
 		PreparedStatement statement = null;
 		ResultSet rSet = null;
-		String condition = "and cd=? and name=?";
-		String order = " order by cd asc";
-		String conditionIsAttend = "";
-
+//		String condition = "and cd=?";
+//		String order = " order by cd asc";
+		Subject subject = new Subject();
 		try {
-			statement = connection.prepareStatement(baseSql + condition + conditionIsAttend + order);
+
+			statement = connection.prepareStatement(baseSql);
 			statement.setString(1, school.getCd());
 			rSet = statement.executeQuery();
 
 			while (rSet.next()) {
-				Subject subject = new Subject();
 				subject.setCd(rSet.getString("cd"));
 				subject.setName(rSet.getString("name"));
 				subject.setSchool(school);
@@ -101,6 +160,8 @@ public class SubjectDao extends Dao {
 		return list;
 
 	}
+
+
 
 	public boolean save(Subject subject) throws Exception{
 
@@ -196,6 +257,4 @@ public class SubjectDao extends Dao {
 	}
 
 }
-
-
 
