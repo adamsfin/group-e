@@ -53,6 +53,7 @@ public class TeacherDao extends Dao {
 	public Teacher login(String id, String password) throws Exception {
 		Teacher teacher = null;
 
+
 		Connection con=getConnection();
 
 		PreparedStatement st;
@@ -68,6 +69,10 @@ public class TeacherDao extends Dao {
 			teacher.setId(rs.getString("id"));
 			teacher.setPassword(rs.getString("password"));
 			teacher.setSchool(schoolDao.get(rs.getString("school_cd")));
+
+		if (teacher != null && !(teacher.getPassword().equals(password))) {
+			teacher = null;
+
 		}
 
 		st.close();
@@ -75,5 +80,7 @@ public class TeacherDao extends Dao {
 
 
 		return teacher;
+
+		}
 	}
 }

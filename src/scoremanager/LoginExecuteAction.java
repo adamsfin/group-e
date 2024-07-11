@@ -12,25 +12,18 @@ public class LoginExecuteAction extends Action{
 
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse res) throws Exception {
-		HttpSession session = req.getSession();
-		TeacherDao teacherDao = new TeacherDao();
-		Teacher teacher = teacherDao.login(req.getParameter("id"), req.getParameter("password"));
 
-		if (teacher==null) {
-//			System.out.println("ssssss");
+		TeacherDao teachDao = new TeacherDao();
+		Teacher teach = teachDao.login(req.getParameter("id"), req.getParameter("password"));
+
+		if (teach==null) {
 			req.setAttribute("loginerr_msg", "ログインに失敗しました。IDまたはパスワードが正しくありません。");
 			req.getRequestDispatcher("login.jsp").forward(req, res);
+		} else {
+			HttpSession sessi = req.getSession();
+			sessi.setAttribute("user", teach);
+			res.sendRedirect("scoremanager.main.Menu.action");
 		}
-
-		else {
-//			System.out.println("sss");
-
-			session.setAttribute("user", teacher);
-
-			req.getRequestDispatcher("/scoremanager/main/subject_list.jsp").forward(req,res);
-		}
-
-
 
 	}
 

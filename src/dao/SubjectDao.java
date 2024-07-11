@@ -10,29 +10,30 @@ import java.util.List;
 import bean.School;
 import bean.Subject;
 
-
 public class SubjectDao extends Dao {
 
-	public Subject get(String cd, School school) throws Exception{
-		Subject subject = new Subject();
 
+	public Subject get (String cd, School school) throws Exception {
+		Subject subject = new Subject();
 		Connection connection = getConnection();
 		PreparedStatement statement = null;
 
 		try {
-		statement = connection.prepareStatement("select * from subject where cd=?");
-		statement.setString(1, cd);
-		ResultSet rSet = statement.executeQuery();
-		SchoolDao schoolDao = new SchoolDao();
 
-		if (rSet.next()) {
-			subject.setCd(rSet.getString("cd"));
-			subject.setName(rSet.getString("name"));
-			subject.setSchool(schoolDao.get(rSet.getString("school")));
-		} else {
-			subject = null;
+			statement = connection.prepareStatement("select * from subject where cd=?");
+			statement.setString(1, cd);
+			ResultSet rSet = statement.executeQuery();
+
+
+			if (rSet.next()) {
+				SchoolDao schoolDao = new SchoolDao();
+				subject.setCd(rSet.getString("cd"));
+				subject.setName(rSet.getString("name"));
+				subject.setSchool(schoolDao.get(rSet.getString("school_cd")));
+			} else {
+				subject = null;
 			}
-		}  catch (Exception e) {
+		} catch (Exception e) {
 			throw e;
 		} finally {
 			if (statement != null) {
@@ -52,10 +53,8 @@ public class SubjectDao extends Dao {
 		}
 
 		return subject;
-
-
-
 	}
+
 
 	public List<Subject> searchSubjects() throws Exception {
 
@@ -116,18 +115,22 @@ public class SubjectDao extends Dao {
 		}
 
 
+
 	public List<Subject> filter(School school) throws Exception{
 		List<Subject> list = new ArrayList<>();
 		Connection connection = getConnection();
 		PreparedStatement statement = null;
 		ResultSet rSet = null;
+
 //		String condition = "and cd=?";
 //		String order = " order by cd asc";
 		Subject subject = new Subject();
+
+
 		try {
 
 
-			statement = connection.prepareStatement(baseSql);
+			statement = connection.prepareStatement("select * from subject where school_cd=?");
 			statement.setString(1, school.getCd());
 			rSet = statement.executeQuery();
 
@@ -157,7 +160,6 @@ public class SubjectDao extends Dao {
 		}
 
 		return list;
-
 	}
 
 
@@ -166,22 +168,21 @@ public class SubjectDao extends Dao {
 
 		Connection connection = getConnection();
 		PreparedStatement statement = null;
-		int count = 0;
 		School school = new School();
-
+		int count = 0;
 
 		try {
-
 			Subject old = get(subject.getCd(), school);
 			if (old == null) {
 				statement = connection.prepareStatement(
 					"insert into subject(cd, name, school_cd) values(?, ?, ?)");
 				statement.setString(1, subject.getCd());
-				statement.setString(2, subject.getName());
-				statement.setString(3, subject.getSchool().getCd());
+				statement.setString(2, subject.getSchool().getCd());
+				statement.setString(3, subject.getName());
 			} else {
 				statement = connection.prepareStatement(
-					"update subject set name=?, Cd=?, where no=?");
+
+					"update subject set name=? where cd=?");
 				statement.setString(1, subject.getName());
 				statement.setString(2, subject.getCd());
 			}
@@ -211,48 +212,43 @@ public class SubjectDao extends Dao {
 		} else {
 			return false;
 		}
-
 	}
 
-	public boolean delete(Subject subject) throws Exception{
+	public boolean delete(Subject subject) throws Exception {
+		Connection connection = getConnection();
+		PreparedStatement statement = null;
+		int count = 0;
 
-	Connection connection = getConnection();
-	PreparedStatement statement = null;
-	int count = 0;
-
-
-	try {
-
+		try {
 			statement = connection.prepareStatement(
-				"delete from subject where cd = ?");
+				"delete from subject where cd=?");
 			statement.setString(1, subject.getCd());
 
-		count = statement.executeUpdate();
-	} catch (Exception e) {
-		throw e;
-	} finally {
-		if (statement != null) {
-			try {
-				statement.close();
-			} catch (SQLException sqle) {
-				throw sqle;
+			count = statement.executeUpdate();
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			if (statement != null) {
+				try {
+					statement.close();
+				} catch (SQLException sqle) {
+					throw sqle;
+				}
+			}
+			if (connection != null) {
+				try {
+					connection.close();
+				} catch (SQLException sqle) {
+					throw sqle;
+				}
 			}
 		}
-		if (connection != null) {
-			try {
-				connection.close();
-			} catch (SQLException sqle) {
-				throw sqle;
-			}
+
+		if (count > 0) {
+			return true;
+		} else {
+			return false;
 		}
-	}
-
-	if (count > 0) {
-		return true;
-	} else {
-		return false;
-	}
-
 	}
 
 }
