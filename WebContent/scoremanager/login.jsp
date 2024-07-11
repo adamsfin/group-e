@@ -4,6 +4,7 @@
 <c:import url="/common/base.jsp">
 	<c:param name="title">
 		<h2 class="toptitle">ログイン</h2>
+
 	</c:param>
 
 	<c:param name="content">
