@@ -128,7 +128,6 @@ public class SubjectDao extends Dao {
 		Subject subject = new Subject();
 		try {
 
-
 			statement = connection.prepareStatement(baseSql);
 			statement.setString(1, school.getCd());
 			rSet = statement.executeQuery();
