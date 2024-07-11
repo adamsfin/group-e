@@ -16,7 +16,6 @@ public class LoginExecuteAction extends Action{
 		TeacherDao teacherDao = new TeacherDao();
 		Teacher teacher = teacherDao.login(req.getParameter("id"), req.getParameter("password"));
 
-
 		if (teacher==null) {
 //			System.out.println("ssssss");
 			req.setAttribute("loginerr_msg", "ログインに失敗しました。IDまたはパスワードが正しくありません。");
@@ -26,11 +25,9 @@ public class LoginExecuteAction extends Action{
 		else {
 //			System.out.println("sss");
 
-
 			session.setAttribute("user", teacher);
 
-
-			req.getRequestDispatcher("/main/menu.jsp").forward(req,res);
+			req.getRequestDispatcher("/scoremanager/main/subject_list.jsp").forward(req,res);
 		}
 
 
