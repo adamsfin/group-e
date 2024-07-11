@@ -17,7 +17,7 @@ public class SubjectCreateAction extends Action{
 
 		HttpSession session = request. getSession();
 		Teacher teacher = (Teacher)session.getAttribute("user");
-		System.out.print(teacher);
+//		System.out.print(teacher);
 
 		request.getRequestDispatcher("/scoremanager/main/subject_create.jsp").forward(request, response);
 
