@@ -196,6 +196,49 @@ public class StudentDao extends Dao {
 		return list;
 	}
 
+	public List<Student> searchStudent() throws Exception {
+	    // 空のリストを作成して、検索結果を格納する準備をします
+	    List<Student> list = new ArrayList<>();
+
+	    // データベースとの接続を確立します
+	    Connection con = getConnection(); // getConnection() は適切な実装を想定
+
+	    // SQLクエリを準備します
+	    PreparedStatement st = con.prepareStatement(
+	            "SELECT * FROM student");
+
+	    // クエリを実行し、その結果を取得します
+	    ResultSet rs = st.executeQuery();
+
+	    // 取得した結果を1行ずつ処理します
+	    while (rs.next()){
+	        // 新しいStudentオブジェクトを作成します
+	        Student student = new Student();
+
+	        // ResultSetからデータを取得して、Studentオブジェクトに設定します
+	        student.setNo(rs.getString("NO")); // 学生番号
+	        student.setName(rs.getString("NAME")); // 名前
+	        student.setEntYear(rs.getInt("ENT_YEAR")); // 入学年度
+	        student.setClassNum(rs.getString("CLASS_NUM")); // クラス番号
+	        student.setAttend(rs.getBoolean("IS_ATTEND")); // 出席しているかどうか
+
+	        // 学校情報を取得して、Studentオブジェクトに設定します
+	        School school = new School(); // 仮の実装で、実際のデータから取得する必要があります
+	        student.setSchool(school);
+
+	        // リストにStudentオブジェクトを追加します
+	        list.add(student);
+	    }
+
+	    // 使用が終わったPreparedStatementとConnectionを閉じます
+	    st.close();
+	    con.close();
+
+	    // 最終的にStudentのリストを返します
+	    return list;
+	}
+
+
 	public boolean save(Student student) throws Exception {
 		Connection connection = getConnection();
 		PreparedStatement statement = null;
