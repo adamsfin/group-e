@@ -143,7 +143,7 @@
 					                for (Subject subject : list) {
 					        %>
 					        <option value="<%= subject.getCd() %>"
-					            <%-- f4 という名前のリクエストパラメータがある場合、それと一致する場合に選択状態にする --%>
+					            <%-- f3 という名前のリクエストパラメータがある場合、それと一致する場合に選択状態にする --%>
 					            <% if (request.getParameter("f3") != null && request.getParameter("f3").equals(subject.getCd())) { %>
 					                selected
 					            <% } %>
@@ -159,10 +159,51 @@
 					    </select>
 					</div>
 
+                    <!-- 絞り込みボタンやその他のフォーム項目は既存のものを利用 -->
 
+                    <div class="col-2 text-center">
+                        <button type="submit" class="btn btn-secondary" id="search-button">絞込み</button>
+                    </div>
 
-                    <br><div class="col-2 text-center">
-                        <button class="btn btn-secondary" id="filter-button">絞込み</button>
+                </div>
+            </form>
+
+            <!-- 学生番号の検索フォーム -->
+             <form method="get" action="/group-e_kanai/tester__/studentsearchservlet">
+                <div class="row border mx-3 mb-3 py-2 align-items-center rounded">
+               <div class="col-3">
+					<label class="form-label" for="student-f3-select">学生番号</label>
+					<select class="form-select" id="student-f3-select" name="f5">
+					<%
+										            List<String> NOList = new ArrayList<>();
+										            List<Student> List = (List<Student>) request.getAttribute("studentList");
+										            if (studentList != null) {
+										                for (Student student : studentList) {
+										                    NOList.add(student.getNo());
+										                }
+										            }
+
+										            for (String No : NOList) {
+										        %>
+					<option value="<%= No %>"
+					<%-- リクエストパラメータ f3 がある場合、それと一致する場合に選択状態にする --%>
+					<% if (request.getParameter("f1") != null && request.getParameter("f1").equals(No)) { %>
+										                selected
+					<% } %>
+					><%= No %></option>
+					<%
+										            }
+										            if (NOList.isEmpty()) {
+										        %>
+					<option value="">学生リストが空です</option>
+					<%
+										            }
+										        %>
+					</select>
+					</div>
+
+                     <div class="col-2 text-center">
+                        <button type="submit" class="btn btn-secondary" id="search-button">絞込み</button>
                     </div>
                 </div>
             </form>
