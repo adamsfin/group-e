@@ -26,15 +26,20 @@ public class TestDao extends Dao {
 
 		try {
 			statement = connection.prepareStatement(
-				"select test.student_no,subject_cd,test.no,point,test.class_num,update_date"
-				+ " from test join student on test.student_no=student.no"
-				+ " where subject_cd=? and test.school_cd=? and test.no=? and test.class_num=? and ent_year=?"
+				"select student.no as student_no,? as subject_cd,? as no,point,student.class_num,update_date"
+				+ " from (select no,class_num from student where ent_year=? and class_num=? and school_cd=?) student"
+				+ " left join (select * from test where class_num=? and subject_cd=? and school_cd=? and no=?) test"
+				+ " on student.no=test.student_no"
 			);
 			statement.setString(1, subject.getCd());
-			statement.setString(2, school.getCd());
-			statement.setInt(3, no);
+			statement.setInt(2, no);
+			statement.setInt(3, entYear);
 			statement.setString(4, classNum);
-			statement.setInt(5, entYear);
+			statement.setString(5, school.getCd());
+			statement.setString(6, classNum);
+			statement.setString(7, subject.getCd());
+			statement.setString(8, school.getCd());
+			statement.setInt(9, no);
 			rSet = statement.executeQuery();
 			list = postFilter(rSet, school);
 		} catch (Exception e) {
@@ -74,6 +79,7 @@ public class TestDao extends Dao {
 					test.setSchool(school);
 					test.setNo(rSet.getInt("no"));
 					test.setPoint(rSet.getInt("point"));
+					if (rSet.wasNull()) { test.setPoint(null); }
 					test.setClassNum(rSet.getString("class_num"));
 					test.setUpdateDate(rSet.getDate("update_date"));
 					list.add(test);
@@ -93,7 +99,8 @@ public class TestDao extends Dao {
 		PreparedStatement statement = null;
 
 		try {
-			statement = connection.prepareStatement(baseSql + " where student_no=? and subject_cd=? and school_cd=? and no=?");
+			statement = connection.prepareStatement(
+				baseSql + " where student_no=? and subject_cd=? and school_cd=? and no=?");
 			statement.setString(1, student.getNo());
 			statement.setString(2, subject.getCd());
 			statement.setString(3, school.getCd());
@@ -144,7 +151,8 @@ public class TestDao extends Dao {
 				old = save(test, connection);
 				if (old == false) {
 					statement = connection.prepareStatement(
-						"insert into test(student_no, subject_cd, school_cd, no, point, class_num, update_date) values(?, ?, ?, ?, ?, ?, ?)");
+						"insert into test(student_no, subject_cd, school_cd, no, point, class_num, update_date)"
+						+ " values(?, ?, ?, ?, ?, ?, ?)");
 					statement.setString(1, test.getStudent().getNo());
 					statement.setString(2, test.getSubject().getCd());
 					statement.setString(3, test.getSchool().getCd());
@@ -154,12 +162,14 @@ public class TestDao extends Dao {
 					statement.setDate(7, Date.valueOf(LocalDate.now()));
 				} else {
 					statement = connection.prepareStatement(
-						"update test set point=?, update_date=? where student_no=? and subject_cd=? and no=?");
+						"update test set point=?, update_date=?"
+						+ " where student_no=? and subject_cd=? and school_cd=? and no=?");
 					statement.setInt(1, test.getPoint());
 					statement.setDate(2, Date.valueOf(LocalDate.now()));
 					statement.setString(3, test.getStudent().getNo());
 					statement.setString(4, test.getSubject().getCd());
-					statement.setInt(5, test.getNo());
+					statement.setString(5, test.getSchool().getCd());
+					statement.setInt(6, test.getNo());
 				}
 
 				count = statement.executeUpdate();
@@ -192,7 +202,8 @@ public class TestDao extends Dao {
 		PreparedStatement statement = null;
 
 		try {
-			statement = connection.prepareStatement(baseSql + " where student_no=? and subject_cd=? and school_cd=? and no=?");
+			statement = connection.prepareStatement(
+				baseSql + " where student_no=? and subject_cd=? and school_cd=? and no=?");
 			statement.setString(1, test.getStudent().getNo());
 			statement.setString(2, test.getSubject().getCd());
 			statement.setString(3, test.getSchool().getCd());
@@ -206,13 +217,6 @@ public class TestDao extends Dao {
 			if (statement != null) {
 				try {
 					statement.close();
-				} catch (SQLException sqle) {
-					throw sqle;
-				}
-			}
-			if (connection != null) {
-				try {
-					connection.close();
 				} catch (SQLException sqle) {
 					throw sqle;
 				}
