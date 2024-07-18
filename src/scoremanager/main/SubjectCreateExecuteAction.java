@@ -4,43 +4,35 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import bean.Student;
 import bean.Subject;
 import bean.Teacher;
-import dao.StudentDao;
 import dao.SubjectDao;
 import tool.Action;
 
 public class SubjectCreateExecuteAction extends Action {
 
 	@Override
-	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-
-		HttpSession session = request. getSession();
-
+	public void execute(HttpServletRequest req, HttpServletResponse res) throws Exception {
+		HttpSession session = req. getSession();
 		Teacher teacher = (Teacher)session.getAttribute("user");
-
-		StudentDao studentDao = new StudentDao();
-		Student student = new Student();
-		Subject subject = new Subject();
 		SubjectDao subDao = new SubjectDao();
+		Subject subject = new Subject();
 
-
-
-		subject.setCd(request.getParameter("subjectname"));
-		subject.setName(request.getParameter("subjectcode"));
+//		入力した値を取得
+		subject.setCd(req.getParameter("cd"));
+		subject.setName(req.getParameter("name"));
 		subject.setSchool(teacher.getSchool());
 
+//		DBに保存
 		boolean bool = subDao.save(subject);
 
+//		登録成功したらJSPへフォワード
 		if (bool == true) {
 			System.out.println("登録成功");
+			req.getRequestDispatcher("subject/subject_create_done.jsp").forward(req, res);
 		} else {
 			System.out.println("登録失敗");
 		}
-		response.sendRedirect("subject_create_done.jsp");
-
-
 
 	}
 }
