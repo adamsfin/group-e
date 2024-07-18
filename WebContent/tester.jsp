@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <% String errorMg = (String)session.getAttribute("error"); %>
 <html>
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
 <body>
 <h3>遷移先確認ページです。</h3>
 <form action="tester2" method="get">
@@ -13,7 +16,7 @@
 <a href="scoremanager.Login.action">ログイン</a>
 <a href="scoremanager.main.TestUpdate.action">成績出力テスト</a>
 <% if (errorMg!=null) { %>
-	<%= errorMg %>
+    <p class="error-message"><%= errorMg %></p>
 <% } %>
 </body>
 </html>
