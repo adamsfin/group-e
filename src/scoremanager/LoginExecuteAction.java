@@ -8,21 +8,23 @@ import bean.Teacher;
 import dao.TeacherDao;
 import tool.Action;
 
-public class LoginActionExecute extends Action{
+public class LoginExecuteAction extends Action{
 
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse res) throws Exception {
-		TeacherDao teacherDao = new TeacherDao();
-		Teacher teacher = teacherDao.login(req.getParameter("id"), req.getParameter("password"));
 
-		if (teacher==null) {
+		TeacherDao teachDao = new TeacherDao();
+		Teacher teach = teachDao.login(req.getParameter("id"), req.getParameter("password"));
+
+		if (teach==null) {
 			req.setAttribute("loginerr_msg", "ログインに失敗しました。IDまたはパスワードが正しくありません。");
 			req.getRequestDispatcher("login.jsp").forward(req, res);
+		} else {
+			HttpSession sessi = req.getSession();
+			sessi.setAttribute("user", teach);
+			res.sendRedirect("scoremanager.main.Menu.action");
 		}
 
-		HttpSession session = req.getSession();
-		session.setAttribute("user", teacher);
-		res.sendRedirect("/Menu.action");
 	}
 
 }

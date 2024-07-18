@@ -31,13 +31,50 @@
             </li>
             <li class="score-kamoku-link"><a href="#">科目</a>
                 <ul class="sub-menu" style="display: none;">
-                    <li><a href="/group-e/subject_list.jsp">科目管理</a></li>
-                    <li><a href="/group-e/subject_list.jsp">科目一覧</a></li>
-                    <li><a href="/group-e/subject_list.jsp">科目登録</a></li>
+                    <li><a href="subject_list.jsp">科目管理</a></li>
+                    <li><a href="subject_list.jsp">科目一覧</a></li>
+                    <li><a href="subject_create.jsp">科目登録</a></li>
                 </ul>
             </li>
         </ul>
     </div>
+
+   <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('.sidebar .score-gakusei-link').click(function() {
+            $('.sidebar .score-gakusei-link .sub-menu').toggle();
+        });
+
+        $('.sidebar .score-seiseki-link').click(function() {
+            $('.sidebar .score-seiseki-link .sub-menu').toggle();
+        });
+
+        $('.sidebar .score-kamoku-link').click(function() {
+            $('.sidebar .score-kamoku-link .sub-menu').toggle();
+        });
+    });
+
+    function loadSubjects() {
+        var subjects = JSON.parse(localStorage.getItem("subjects")) || [];
+        var table = document.getElementById("subjectTable");
+        subjects.forEach(function(subject) {
+            var newRow = table.insertRow();
+            var cell1 = newRow.insertCell(0);
+            var cell2 = newRow.insertCell(1);
+            var cell3 = newRow.insertCell(2);
+            var cell4 = newRow.insertCell(3);
+
+            cell1.innerHTML = subject.entYear;
+            cell2.innerHTML = subject.classNum;
+            cell3.innerHTML = subject.subjectName;
+            cell4.innerHTML = '<a href="#">変更</a> <a href="#">削除</a>';
+        });
+    }
+
+    window.onload = loadSubjects;
+</script>
 
 <!-- 科目追加フォーム -->
     <h2>科目追加</h2>

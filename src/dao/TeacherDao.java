@@ -51,12 +51,36 @@ public class TeacherDao extends Dao {
 	}
 
 	public Teacher login(String id, String password) throws Exception {
-		Teacher teacher = get(id);
+		Teacher teacher = null;
 
-		if (teacher != null && teacher.getPassword() != password) {
+
+		Connection con=getConnection();
+
+		PreparedStatement st;
+		st=con.prepareStatement(
+				"select * from teacher where id = ? and password=?");
+		st.setString(1, id);
+		st.setString(2, password);
+		ResultSet rs=st.executeQuery();
+		SchoolDao schoolDao = new SchoolDao();
+
+		while (rs.next()) {
+			teacher=new Teacher();
+			teacher.setId(rs.getString("id"));
+			teacher.setPassword(rs.getString("password"));
+			teacher.setSchool(schoolDao.get(rs.getString("school_cd")));
+
+		if (teacher != null && !(teacher.getPassword().equals(password))) {
 			teacher = null;
+			}
 		}
 
+		st.close();
+		con.close();
+
+
 		return teacher;
+
+
 	}
 }

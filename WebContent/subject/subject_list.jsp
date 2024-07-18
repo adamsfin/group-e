@@ -14,7 +14,7 @@
         <section class="mo-4">
             <h2 class="h3 mb-3 fw-norma bg-secondary bg-opacity-10 py-2 px-4">科目管理</h2>
             <div class="my-2 text-end px-4">
-                <a href="StudentCreate.action">科目登録</a>
+                <a href="/group-e/subject/subject_create.jsp">新規登録</a>
             </div>
             <form method="get">
                 <div class="row border mx-3 mb-3 py-2 align-items-center rounded" id="filter">
@@ -23,7 +23,7 @@
                         <select class="form-select" id="subject-f1-select" name="f1">
                             <option value="O">--------</option>
                             <c:forEach var="year" items="${subject_set}">
-                                <%-- 現在のyearと選択されていたf1が一致していた場合selectedを追記 --%>
+                                <%-- 現在のnameと選択されていたf1が一致していた場合selectedを追記 --%>
                                 <option value="${name}" <c:if test="${name==f1}">selected</c:if>>${year}></option>
                             </c:forEach>
                         </select>
@@ -61,6 +61,74 @@
                             </tr>
                         </c:forEach>
                     </table>
+
+<div class="container">
+    <!-- メニュー見出し -->
+    <h2 class="h3 mb-3 fw-normal bg-secondary bg-opacity-10 py-2 px-4 st_management">科目登録</h2>
+    <!-- サイドバー -->
+    <div class="sidebar">
+        <ul>
+            <li><a href="/group-e/main/menu.jsp">メニュー</a></li>
+            <li class="score-gakusei-link"><a href="#">学生</a>
+                <ul class="sub-menu" style="display: none;">
+                    <li><a href="/group-e/student/student_list.jsp">学生管理</a></li>
+                    <li><a href="/group-e/student/student_registration.jsp">学生登録</a></li>
+                    <li><a href="/group-e/student/student_update.jsp">学生変更</a></li>
+                </ul>
+            </li>
+            <li class="score-seiseki-link"><a href="#">成績</a>
+                <ul class="sub-menu" style="display: none;">
+                    <li><a href="/group-e/subject_manage.jsp">成績管理</a></li>
+                    <li><a href="/group-e/subject_manage.jsp">成績登録</a></li>
+                    <li><a href="/group-e/subject_manage.jsp">成績参照</a></li>
+                </ul>
+            </li>
+            <li class="score-kamoku-link"><a href="#">科目</a>
+                <ul class="sub-menu" style="display: none;">
+                    <li><a href="/group-e/subject_list.jsp">科目管理</a></li>
+                    <li><a href="/group-e/subject_list.jsp">科目一覧</a></li>
+                    <li><a href="/group-e/subject_list.jsp">科目登録</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+   <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('.sidebar .score-gakusei-link').click(function() {
+            $('.sidebar .score-gakusei-link .sub-menu').toggle();
+        });
+
+        $('.sidebar .score-seiseki-link').click(function() {
+            $('.sidebar .score-seiseki-link .sub-menu').toggle();
+        });
+
+        $('.sidebar .score-kamoku-link').click(function() {
+            $('.sidebar .score-kamoku-link .sub-menu').toggle();
+        });
+    });
+
+    function loadSubjects() {
+        var subjects = JSON.parse(localStorage.getItem("subjects")) || [];
+        var table = document.getElementById("subjectTable");
+        subjects.forEach(function(subject) {
+            var newRow = table.insertRow();
+            var cell1 = newRow.insertCell(0);
+            var cell2 = newRow.insertCell(1);
+            var cell3 = newRow.insertCell(2);
+            var cell4 = newRow.insertCell(3);
+
+            cell1.innerHTML = subject.entYear;
+            cell2.innerHTML = subject.classNum;
+            cell3.innerHTML = subject.subjectName;
+            cell4.innerHTML = '<a href="#">変更</a> <a href="#">削除</a>';
+        });
+    }
+
+    window.onload = loadSubjects;
+</script>
                 </c:when>
                 <c:otherwise>
                     <div>科目情報が存在しませんでした</div>

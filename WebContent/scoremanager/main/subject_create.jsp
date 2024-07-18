@@ -4,11 +4,9 @@
 
 <c:import url="/common/base.jsp">
     <c:param name="title">
-        <h1 class="toptitle">科目追加完了</h1>
+        <h1 class="toptitle">科目追加</h1>
     </c:param>
 </c:import>
-
-
 
 <div class="container">
     <!-- メニュー見出し -->
@@ -33,7 +31,7 @@
             </li>
             <li class="score-kamoku-link"><a href="#">科目</a>
                 <ul class="sub-menu" style="display: none;">
-                    <li><a href="subject_list.jsp">科目管理</a></li>
+                    <li><a href="main.SubjectList.action">科目管理</a></li>
                     <li><a href="subject_list.jsp">科目一覧</a></li>
                     <li><a href="subject_create.jsp">科目登録</a></li>
                 </ul>
@@ -78,8 +76,15 @@
     window.onload = loadSubjects;
 </script>
 
-<h2>科目情報登録</h2>
-<label><p>登録が完了しました</p></label>
-<li><a href="/group-e/main/menu.jsp">戻る</a></li>
-<li><a href="/group-e/subject/subject_list.jsp">科目一覧リンク</a></li>
+<!-- 科目追加フォーム -->
+    <h2>科目追加</h2>
+    <form action="SubjectCreateExecute.action" method="get">
+        <label for="subjectName">科目名:</label>
+        <input type="text" id="subjectName" value="" placeholder="科目名を入力して下さい" name="subjectname" required><br>
+
+   		<label class="form-label" for="school_name">科目コード:</label>
+      	<input type="text" id="subject-school_Name" value="" placeholder="科目コードを入力して下さい"name="subjectcode" required>
+        <button type="submit">追加</button>
+    </form>
+    <a href="/group-e/subject/subject_list.jsp">戻る</a>
 

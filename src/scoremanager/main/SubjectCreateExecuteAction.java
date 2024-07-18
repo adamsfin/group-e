@@ -15,7 +15,9 @@ public class SubjectCreateExecuteAction extends Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
 		HttpSession session = request. getSession();
+
 		Teacher teacher = (Teacher)session.getAttribute("user");
 
 		StudentDao studentDao = new StudentDao();
@@ -23,8 +25,10 @@ public class SubjectCreateExecuteAction extends Action {
 		Subject subject = new Subject();
 		SubjectDao subDao = new SubjectDao();
 
-		subject.setCd(request.getParameter("cd"));
-		subject.setName(request.getParameter("name"));
+
+
+		subject.setCd(request.getParameter("subjectname"));
+		subject.setName(request.getParameter("subjectcode"));
 		subject.setSchool(teacher.getSchool());
 
 		boolean bool = subDao.save(subject);
@@ -34,7 +38,7 @@ public class SubjectCreateExecuteAction extends Action {
 		} else {
 			System.out.println("登録失敗");
 		}
-		response.sendRedirect("group-e/subject/subject_create_done.jsp");
+		response.sendRedirect("subject_create_done.jsp");
 
 
 
