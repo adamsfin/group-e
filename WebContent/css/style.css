@@ -129,6 +129,72 @@ body {
 }
 
 
+/* フォームのスタイル */
+.form-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-control {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    align-items: center;
+}
+
+#filter .col-4 {
+    width: calc(33.333% - 20px);
+}
+
+#filter .col-2 {
+    width: calc(16.666% - 20px);
+}
+
+#filter-button {
+    width: 100%;
+    padding: 10px 0;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#filter-button:hover {
+    background-color: #0056b3;
+}
+
+label {
+    margin-top: 10px;
+}
+
+#filter .col-4, #filter .col-2 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#filter .form-label {
+    text-align: left;
+    margin-bottom: 4px;
+}
+
+
 
 
 

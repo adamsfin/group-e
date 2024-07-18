@@ -36,7 +36,7 @@ $(document).ready(function() {
             <li class="score-gakusei-link"><a href="#">学生</a>
                 <ul class="sub-menu" style="display: none;">
                 	<li><a href="scoremanager.main.StudentList.action">学生管理</a></li>
-                    <li><a href="#">学生登録</a></li>
+                    <li><a href="/group-e/scoremanager.main.StudentCreate.action">学生登録</a></li>
                     <li><a href="#">学生変更</a></li>
                 </ul>
             </li>
