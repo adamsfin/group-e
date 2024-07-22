@@ -79,6 +79,7 @@
     text-decoration: none;
 }
 
+
 .menu-item a:hover {
     background-color: #ddd; /* マウスオーバー時の背景色 */
 }
