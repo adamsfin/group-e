@@ -78,9 +78,7 @@ public class TeacherDao extends Dao {
 		st.close();
 		con.close();
 
-
 		return teacher;
-
 
 	}
 }

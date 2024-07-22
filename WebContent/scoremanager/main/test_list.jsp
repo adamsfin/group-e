@@ -10,8 +10,7 @@
 	<c:param name="scripts"></c:param>
 
 	<c:param name="content">
-    <h2 class="centered-heading">成績参照</h2>
-
+		<h2>成績参照</h2>
 
 		<div class="test_search_form">
 			<div>科目情報</div>
