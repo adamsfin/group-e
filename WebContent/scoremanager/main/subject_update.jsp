@@ -14,14 +14,18 @@
 
 		<!-- 科目追加フォーム -->
 	    <h2>科目追加</h2>
-	    <form action="SubjectCreateExecute.action" method="get">
+
+	    <c:if test="${!empty inputVal}"><c:set var="cd" value="${inputVal.cd}"/> </c:if>
+
+	    <form action="SubjectUpdateExecute.action" method="get">
 	        <label for="cd">科目コード</label>
-	        <input type="text" name="cd" value="${inputVal.cd}" placeholder="科目コードを入力して下さい" required>
-	        <div class="inputCd_error">${cd_error}</div>
+	        <input type="hidden" name="cd" value="${cd}">
+	        <div>${cd}</div>
+	        <div class="subject_error">${subject_error}</div>
 
 	   		<label for="name">科目名</label>
 	      	<input type="text" name="name" value="${inputVal.name}" placeholder="科目名を入力して下さい" required>
-	        <input type="submit" value="登録">
+	        <input type="submit" value="変更">
 	    </form>
 	    <a href="SubjectList.action">戻る</a>
 	</c:param>

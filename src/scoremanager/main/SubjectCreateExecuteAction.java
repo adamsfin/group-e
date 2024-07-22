@@ -1,38 +1,43 @@
 package scoremanager.main;
 
+import java.util.HashMap;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import bean.Subject;
-import bean.Teacher;
 import dao.SubjectDao;
+import scoremanager.Util;
 import tool.Action;
 
 public class SubjectCreateExecuteAction extends Action {
 
 	@Override
-	public void execute(HttpServletRequest req, HttpServletResponse res) throws Exception {
-		HttpSession session = req. getSession();
-		Teacher teacher = (Teacher)session.getAttribute("user");
-		SubjectDao subDao = new SubjectDao();
-		Subject subject = new Subject();
-
-//		入力した値を取得
-		subject.setCd(req.getParameter("cd"));
-		subject.setName(req.getParameter("name"));
-		subject.setSchool(teacher.getSchool());
-		System.out.println();
-//		DBに保存
-		boolean bool = subDao.save(subject);
-
-//		登録成功したらJSPへフォワード
-		if (bool == true) {
-			System.out.println("登録成功");
-			req.getRequestDispatcher("/scoremanager/main/subject_create_done.jsp").forward(req, res);
+	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		String
+			cd = request.getParameter("cd"),
+			name = request.getParameter("name");
+		if (cd.length()!=3) {
+			request.setAttribute("cd_error", "科目コードは3文字で入力してください");
 		} else {
-			System.out.println("登録失敗");
+			Util util = new Util();
+			SubjectDao subjectDao = new SubjectDao();
+			if ((subjectDao.get(cd, util.getUser(request).getSchool())) != null) {
+				request.setAttribute("cd_error", "科目コードが重複しています");
+			} else {
+				Subject subject = new Subject();
+				subject.setCd(cd);
+				subject.setName(name);
+				subject.setSchool(util.getUser(request).getSchool());
+				subjectDao.save(subject);
+				request.getRequestDispatcher("subject_create_done.jsp").forward(request, response);
+				return;
+			}
 		}
-
+		request.setAttribute("inputVal", new HashMap<String, String>(){{
+			put("cd", cd);
+			put("name", name);
+		}});
+		request.getRequestDispatcher("subject_create.jsp").forward(request, response);;
 	}
 }
