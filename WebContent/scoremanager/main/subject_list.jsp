@@ -15,7 +15,7 @@
         <section class="mo-4">
             <h2 class="h3 mb-3 fw-norma bg-secondary bg-opacity-10 py-2 px-4">科目管理</h2>
             <div class="my-2 text-end px-4">
-                <a href="main.SubjectCreate.action">新規登録</a>
+                <a href="SubjectCreate.action">新規登録</a>
             </div>
             <!-- <form method="get">
                 <div class="row border mx-3 mb-3 py-2 align-items-center rounded" id="filter">
@@ -63,8 +63,8 @@
                                 <td class="text-center">
                                     <%-- 在学フラグがたっている場合[〇]それ以外は[×]を表示 --%>
                                 </td>
-                                <td><a href="scoremanager.main.SubjectUpdate.action">変更</a></td>
-                                <td><a href="scoremanager.main.SubjectDelete.action">削除</a></td>
+                                <td><a href="SubjectUpdate.action">変更</a></td>
+                                <td><a href="SubjectDelete.action">削除</a></td>
                             </tr>
                         </c:forEach>
                     </table>
@@ -78,9 +78,9 @@
             <li><a href="/group-e/main/menu.jsp">メニュー</a></li>
             <li class="score-gakusei-link"><a href="#">学生</a>
                 <ul class="sub-menu" style="display: none;">
-                    <li><a href="/group-e/student/student_list.jsp">学生管理</a></li>
-                    <li><a href="/group-e/student/student_registration.jsp">学生登録</a></li>
-                    <li><a href="/group-e/student/student_update.jsp">学生変更</a></li>
+                    <li><a href="/group-e/scoremanager.main.StudentList.action">学生管理</a></li>
+                    <li><a href="/group-e/scoremanager.main.StudentCreate.action">学生登録</a></li>
+                    <li><a href="/group-e/scoremanager.main.StudentUpdate.action">学生変更</a></li>
                 </ul>
             </li>
             <li class="score-seiseki-link"><a href="#">成績</a>
@@ -94,7 +94,7 @@
                 <ul class="sub-menu" style="display: none;">
                     <li><a href="SubjectList.action">科目管理</a></li>
                     <li><a href="SubjectList.action">科目一覧</a></li>
-                    <li><a href="/group-e/scoremanager/main/subject_list.jsp">科目登録</a></li>
+                    <li><a href="SubjectCreate.action">科目登録</a></li>
                 </ul>
             </li>
         </ul>
@@ -130,7 +130,7 @@
             cell1.innerHTML = subject.entYear;
             cell2.innerHTML = subject.classNum;
             cell3.innerHTML = subject.subjectName;
-            cell4.innerHTML = '<a href="#">変更</a> <a href="#">削除</a>';
+            cell4.innerHTML = '<a href="SubjectUpdate.action">変更</a> <a href="SubjectDelete.action">削除</a>';
         });
     }
 
@@ -145,4 +145,5 @@
         </section>
     </c:param>
 </c:import>
+
 
