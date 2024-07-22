@@ -40,7 +40,7 @@ public class StudentUpdateAction extends Action{
 		session.setAttribute("student", student);
 		req.setAttribute("attend", student.isAttend() ? "true" : null);
 		//JSPへフォワード 7
-		req.getRequestDispatcher("student/student_update.jsp").forward(req, res);
+		req.getRequestDispatcher("student_update.jsp").forward(req, res);
 	}
 
 }
