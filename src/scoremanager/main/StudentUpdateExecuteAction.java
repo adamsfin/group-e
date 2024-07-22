@@ -11,16 +11,16 @@ import tool.Action;
 public class StudentUpdateExecuteAction extends Action{
 
 	@Override
-	public void execute(HttpServletRequest req, HttpServletResponse res) throws Exception {
-		HttpSession session = req.getSession();
+	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		HttpSession session = request.getSession();
 //		HttpSession session = req. getSession();
 		StudentDao studentDao = new StudentDao();
 //		Student student = (Student)session.getAttribute("student");
 		Student student = (Student)session.getAttribute("student");
 
-		student.setName(req.getParameter("name"));
-		student.setClassNum(req.getParameter("classnum"));
-		student.setAttend(req.getParameterValues("isattend")==null ? false : true);
+		student.setName(request.getParameter("name"));
+		student.setClassNum(request.getParameter("classnum"));
+		student.setAttend(request.getParameterValues("isattend")==null ? false : true);
 
 		boolean bool = studentDao.save(student);
 
@@ -28,7 +28,7 @@ public class StudentUpdateExecuteAction extends Action{
 //			上手くいったらメインメニューにリダイレクトでもするか
 			System.out.println("更新成功");
 			session.removeAttribute("student");
-			res.sendRedirect("scoremanager.main.StudentList.action");
+			response.sendRedirect("scoremanager.main.StudentList.action");
 		}
 	}
 

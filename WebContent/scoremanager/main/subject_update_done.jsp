@@ -10,9 +10,9 @@
 	<c:param name="scripts"></c:param>
 
 	<c:param name="content">
-		<h2>科目情報登録</h2>
-		<p>登録が完了しました</p>
-		<a href="SubjectCreate.action">戻る</a>
+		<h2>科目情報変更</h2>
+		<p>変更が完了しました</p>
+		<a href="SubjectUpdate.action">戻る</a>
 		<a href="SubjectList.action">科目一覧リンク</a>
 	</c:param>
 

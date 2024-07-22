@@ -1,29 +1,38 @@
 package scoremanager.main;
 
+import java.util.HashMap;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import bean.Subject;
 import dao.SubjectDao;
+import scoremanager.Util;
 import tool.Action;
 
 public class SubjectUpdateExecuteAction extends Action{
 
 	@Override
-	public void execute(HttpServletRequest req, HttpServletResponse res) throws Exception {
-		HttpSession session = req.getSession();
+	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		String
+			cd = request.getParameter("cd"),
+			name = request.getParameter("name");
 		SubjectDao subjectDao = new SubjectDao();
-		Subject subject = (Subject)session.getAttribute("subject");
-
-		subject.setName(req.getParameter("name"));
-		subject.setCd(req.getParameter("cd"));
-
-		boolean bool = subjectDao.save(subject);
-
-		if (bool == true) {
-			//JSPへフォワード
-			req.getRequestDispatcher("subject/subject_update_done.jsp").forward(req, res);
+		Util util = new Util();
+		if ((subjectDao.get(cd, util.getUser(request).getSchool()))!=null) {
+			Subject subject = new Subject();
+			subject.setCd(cd);
+			subject.setName(name);
+			subject.setSchool(util.getUser(request).getSchool());
+			subjectDao.save(subject);
+			request.getRequestDispatcher("subject_update_done.jsp").forward(request, response);
+		} else {
+			request.setAttribute("subject_error", "科目が存在していません");
+			request.setAttribute("inputVal", new HashMap<String, String>(){{
+				put("cd", cd);
+				put("name", name);
+			}});
+			request.getRequestDispatcher("subject_update.jsp");
 		}
 	}
 
