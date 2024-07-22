@@ -14,7 +14,7 @@
 
 		<!-- 科目追加フォーム -->
 	    <p>「${subject.name}(${subject.cd})」を削除してもよろしいですか</p>
-	    <form action="SubjectCreateExecute.action" method="get">
+	    <form action="SubjectDeleteExecute.action" method="get">
 	        <label for="cd">科目コード</label>
 	        <input type="hidden" name="cd" value="${subject.cd}">
 	        <input type="submit" value="削除">
