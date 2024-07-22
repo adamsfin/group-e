@@ -196,6 +196,96 @@ label {
 }
 
 
+/* スタイル全体 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+}
+
+h1.toptitle {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+    background-color: #cceeff;
+    padding: 20px;
+}
+
+h2 {
+    font-size: 20px;
+    color: #333;
+    margin: 20px 0;
+}
+
+h3 {
+    font-size: 18px;
+    color: #666;
+    margin: 10px 0;
+}
+
+/* コンテナ */
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* メインコンテンツ */
+.test_search_form {
+    margin-left: 220px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.centered-heading {
+    font-size: 28px;
+    text-align: center;
+}
+
+.test_search_form form {
+    margin-bottom: 20px;
+}
+
+.test_search_form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.test_search_form select,
+.test_search_form input[type="text"],
+.test_search_form input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.test_search_form input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.test_search_form input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.input_val_error, .none_list_error {
+    color: red;
+    font-weight: bold;
+}
+
+p {
+    font-size: 14px;
+    color: #666;
+}
+
+
 
 
 

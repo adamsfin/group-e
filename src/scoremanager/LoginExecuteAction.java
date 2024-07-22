@@ -22,7 +22,7 @@ public class LoginExecuteAction extends Action{
 		} else {
 			HttpSession sessi = req.getSession();
 			sessi.setAttribute("user", teach);
-			res.sendRedirect("scoremanager.main.Menu.action");
+			res.sendRedirect("scoremanager.main.Menuaction");
 		}
 
 	}
