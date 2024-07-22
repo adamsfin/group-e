@@ -10,8 +10,8 @@
 <%--input type="text" name="name"--%>
 <input type="submit">
 </form>
-<a href="scoremanager.main.StudentList.action">リスト</a>
-<a href="scoremanager.main.StudentCreate.action">クリエイト</a>
+<a href="./scoremanager/main/StudentList.action">リスト</a>
+<a href="./scoremanager/main/StudentCreate.action">クリエイト</a>
 <a href="tester_StudentCreateAction">クリエイト2</a>
 <a href="scoremanager.Login.action">ログイン</a>
 <a href="scoremanager.main.TestUpdate.action">成績出力テスト</a>
