@@ -63,13 +63,13 @@ $(document).ready(function() {
     <!-- メニュー -->
     <div class="menu">
         <div class="menu-item student-management">
-            <a href="/group-e/student/student_list.jsp">学生管理</a>
+            <a href="/group-e/scoremanager.main.SutudentList.action">学生管理</a>
         </div>
         <div class="menu-item score-management">
             <a href="#">成績管理</a>
         </div>
         <div class="menu-item subject-management">
-            <a href="#">科目管理</a>
+            <a href="/group-e/scoremanager.main.SubjectList.action">科目管理</a>
         </div>
     </div>
 

@@ -16,7 +16,7 @@
 	<c:param name="content">
 		<section class="mo-4">
 			<h2>科目情報変更</h2>
-			<form action ="/group-e/scoremanager.main.StudentUpdateExecute.action" method="post">
+			<form action ="/group-e/scoremanager.main.SubjectUpdateExecute.action" method="post">
 				<div class="d-flex flex-column border mx-3 mb-3 py-2 px-4 align-items-start rounded" id="filter">
 				<%-- 科目コード表示 --%>
 				<div class="mb-3">
