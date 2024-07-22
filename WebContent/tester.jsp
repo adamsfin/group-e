@@ -16,6 +16,7 @@
 <a href="scoremanager.Login.action">ログイン</a>
 <a href="scoremanager.main.TestUpdate.action">成績出力テスト</a>
 <a href="./scoremanager/main/TestList.action">成績参照</a>
+<a href="./scoremanager/main/SubjectList.action">科目参照</a>
 <% if (errorMg!=null) { %>
     <p class="error-message"><%= errorMg %></p>
 <% } %>
