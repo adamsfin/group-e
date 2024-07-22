@@ -35,7 +35,7 @@ $(document).ready(function() {
         <li><a href="menu.jsp">メニュー</a></li>
             <li class="score-gakusei-link"><a href="#">学生</a>
                 <ul class="sub-menu" style="display: none;">
-                	<li><a href="scoremanager.main.StudentList.action">学生管理</a></li>
+                	<li><a href="/group-e/scoremanager.main.StudentList.action">学生管理</a></li>
                     <li><a href="/group-e/scoremanager.main.StudentCreate.action">学生登録</a></li>
                     <li><a href="#">学生変更</a></li>
                 </ul>
@@ -49,9 +49,9 @@ $(document).ready(function() {
             </li>
             <li class="score-kamoku-link"><a href="#">科目</a>
                 <ul class="sub-menu" style="display: none;">
-                	<li><a href="scoremanager.main.SubjectList.action">科目管理</a></li>
-                    <li><a href="#">科目一覧</a></li>
-                    <li><a href="#">科目登録</a></li>
+                	<li><a href="/group-e/scoremanager.main.SubjectList.action">科目管理</a></li>
+                    <li><a href="/group-e/scoremanager.main.SubjectList.action">科目一覧</a></li>
+                    <li><a href="/group-e/scoremanager.main.SubjectCreate.action">科目登録</a></li>
                 </ul>
             </li>
         </ul>

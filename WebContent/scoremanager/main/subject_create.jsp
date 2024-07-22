@@ -31,9 +31,9 @@
             </li>
             <li class="score-kamoku-link"><a href="#">科目</a>
                 <ul class="sub-menu" style="display: none;">
-                    <li><a href="main.SubjectList.action">科目管理</a></li>
-                    <li><a href="subject_list.jsp">科目一覧</a></li>
-                    <li><a href="subject_create.jsp">科目登録</a></li>
+                    <li><a href="SubjectList.action">科目管理</a></li>
+                    <li><a href="SubjectList.action">科目一覧</a></li>
+                    <li><a href="SubjectCreate.action">科目登録</a></li>
                 </ul>
             </li>
         </ul>
@@ -69,7 +69,7 @@
             cell1.innerHTML = subject.entYear;
             cell2.innerHTML = subject.classNum;
             cell3.innerHTML = subject.subjectName;
-            cell4.innerHTML = '<a href="#">変更</a> <a href="#">削除</a>';
+            cell4.innerHTML = '<a href=""/group-e/scoremanager.main.SubjectUpdate.action">変更</a> <a href=""/group-e/scoremanager.main.SubjectDelete.action">削除</a>';
         });
     }
 
@@ -78,7 +78,7 @@
 
 <!-- 科目追加フォーム -->
     <h2>科目追加</h2>
-    <form action="SubjectCreateExecute.action" method="get">
+    <form action="/group-e/scoremanager.main.SubjectCreateExecute.action" method="get">
         <label for="subjectName">科目名:</label>
         <input type="text" id="subjectName" value="" placeholder="科目名を入力して下さい" name="subjectname" required><br>
 

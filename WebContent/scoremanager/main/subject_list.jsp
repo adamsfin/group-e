@@ -15,7 +15,7 @@
         <section class="mo-4">
             <h2 class="h3 mb-3 fw-norma bg-secondary bg-opacity-10 py-2 px-4">科目管理</h2>
             <div class="my-2 text-end px-4">
-                <a href="SubjectCreate.action">新規登録</a>
+                <a href="/group-e/scoremanager.main.SubjectCreate.action">新規登録</a>
             </div>
             <!-- <form method="get">
                 <div class="row border mx-3 mb-3 py-2 align-items-center rounded" id="filter">
@@ -63,8 +63,8 @@
                                 <td class="text-center">
                                     <%-- 在学フラグがたっている場合[〇]それ以外は[×]を表示 --%>
                                 </td>
-                                <td><a href="SubjectUpdate.action">変更</a></td>
-                                <td><a href="SubjectDelete.action">削除</a></td>
+                                <td><a href="/group-e/scoremanager.main.SubjectUpdate.action">変更</a></td>
+                                <td><a href="/group-e/scoremanager.main.SubjectDelete.action">削除</a></td>
                             </tr>
                         </c:forEach>
                     </table>
@@ -92,9 +92,9 @@
             </li>
             <li class="score-kamoku-link"><a href="#">科目</a>
                 <ul class="sub-menu" style="display: none;">
-                    <li><a href="SubjectList.action">科目管理</a></li>
-                    <li><a href="SubjectList.action">科目一覧</a></li>
-                    <li><a href="SubjectCreate.action">科目登録</a></li>
+                    <li><a href="/group-e/scoremanager.main.SubjectList.action">科目管理</a></li>
+                    <li><a href="/group-e/scoremanager.main.StudentList.action">科目一覧</a></li>
+                    <li><a href="/group-e/scoremanager.main.StudentCreate.action">科目登録</a></li>
                 </ul>
             </li>
         </ul>
@@ -130,7 +130,7 @@
             cell1.innerHTML = subject.entYear;
             cell2.innerHTML = subject.classNum;
             cell3.innerHTML = subject.subjectName;
-            cell4.innerHTML = '<a href="SubjectUpdate.action">変更</a> <a href="SubjectDelete.action">削除</a>';
+            cell4.innerHTML = '<a href="/group-e/scoremanager.main.StudentUpdate.action">変更</a> <a href="/group-e/scoremanager.main.StudentDelete.action">削除</a>';
         });
     }
 
@@ -138,9 +138,7 @@
 </script>
                 </c:when>
 
-                <c:otherwise>
-                    <div>科目情報が存在しませんでした</div>
-                </c:otherwise>
+
             </c:choose>
         </section>
     </c:param>

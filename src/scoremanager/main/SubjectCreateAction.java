@@ -14,7 +14,7 @@ public class SubjectCreateAction extends Action{
 	public void execute(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 
 //		JSPにフォワード
-		req.getRequestDispatcher("subject/subject_create.jsp").forward(req, res);
+		req.getRequestDispatcher("/scoremanager/main/subject_create.jsp").forward(req, res);
 
 	}
 }

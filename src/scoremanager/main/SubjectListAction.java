@@ -36,7 +36,7 @@ public class SubjectListAction extends Action{
 		// ログインユーザーの学校コードをもとに科目の一覧を取得
 
 
-		req.getRequestDispatcher("main/subject_list.jsp").forward(req, res);
+		req.getRequestDispatcher("/scoremanager/main/subject_list.jsp").forward(req, res);
 
 		}
 

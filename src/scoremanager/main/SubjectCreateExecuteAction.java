@@ -19,17 +19,17 @@ public class SubjectCreateExecuteAction extends Action {
 		Subject subject = new Subject();
 
 //		入力した値を取得
-		subject.setCd(req.getParameter("school_Name"));
-		subject.setName(req.getParameter("subjectName"));
+		subject.setCd(req.getParameter("cd"));
+		subject.setName(req.getParameter("name"));
 		subject.setSchool(teacher.getSchool());
-
+		System.out.println();
 //		DBに保存
 		boolean bool = subDao.save(subject);
 
 //		登録成功したらJSPへフォワード
 		if (bool == true) {
 			System.out.println("登録成功");
-			req.getRequestDispatcher("subject/subject_create_done.jsp").forward(req, res);
+			req.getRequestDispatcher("/scoremanager/main/subject_create_done.jsp").forward(req, res);
 		} else {
 			System.out.println("登録失敗");
 		}

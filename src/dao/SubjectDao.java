@@ -215,8 +215,8 @@ public class SubjectDao extends Dao {
 				statement = connection.prepareStatement(
 					"insert into subject(cd, name, school_cd) values(?, ?, ?)");
 				statement.setString(1, subject.getCd());
-				statement.setString(2, subject.getSchool().getCd());
-				statement.setString(3, subject.getName());
+				statement.setString(2, subject.getName());
+				statement.setString(3, subject.getSchool().getCd());
 			} else {
 				statement = connection.prepareStatement(
 
