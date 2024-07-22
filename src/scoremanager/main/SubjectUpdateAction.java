@@ -21,7 +21,7 @@ public class SubjectUpdateAction extends Action{
 		Map<String,String>errors = new HashMap<>();
 
 //		科目コードを受け取る
-		String cd = req.getParameter("cd");
+		String cd = req.getParameter("no");
 //		String id = (String)session.getAttribute("id");
 
 		SubjectDao subjectDao = new SubjectDao();

@@ -19,8 +19,8 @@ public class SubjectCreateExecuteAction extends Action {
 		Subject subject = new Subject();
 
 //		入力した値を取得
-		subject.setCd(req.getParameter("cd"));
-		subject.setName(req.getParameter("name"));
+		subject.setCd(req.getParameter("school_Name"));
+		subject.setName(req.getParameter("subjectName"));
 		subject.setSchool(teacher.getSchool());
 
 //		DBに保存

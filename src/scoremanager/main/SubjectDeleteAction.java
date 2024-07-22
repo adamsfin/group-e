@@ -17,7 +17,7 @@ public class SubjectDeleteAction extends Action{
 		Teacher teacher = (Teacher)session.getAttribute("user");
 
 //		科目コードを受け取る
-		String cd = req.getParameter("cd");
+		String cd = req.getParameter("no");
 //		String cd = (String)session.getAttribute("cd");
 
 		SubjectDao subjectDao = new SubjectDao();
