@@ -44,7 +44,7 @@ $(document).ready(function() {
                 <ul class="sub-menu" style="display: none;">
                 	<li><a href="#">成績管理</a></li>
                     <li><a href="#">成績登録</a></li>
-                    <li><a href="TestList.action">成績参照</a></li>
+                    <li><a href="scoremanager/main/TestList.action">成績参照</a></li>
                 </ul>
             </li>
             <li class="score-kamoku-link"><a href="#">科目</a>
