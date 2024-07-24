@@ -11,8 +11,57 @@
 
     <c:param name="scripts"></c:param>
 
+
+
     <c:param name="content">
-            <h2 class="h3 mb-3 fw-norma bg-secondary bg-opacity-10 py-2 px-4">科目管理</h2>
+    <%-- サイドバー --%>
+            <link rel="stylesheet" type="text/css" href="styles.css">
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+            <script>
+                $(document).ready(function () {
+                    $('.sidebar .score-gakusei-link').click(function () {
+                        $('.sidebar .score-gakusei-link .sub-menu').toggle();
+                    });
+
+                    $('.sidebar .score-seiseki-link').click(function () {
+                        $('.sidebar .score-seiseki-link .sub-menu').toggle();
+                    });
+
+                    $('.sidebar .score-kamoku-link').click(function () {
+                        $('.sidebar .score-kamoku-link .sub-menu').toggle();
+                    });
+                });
+            </script>
+            <div class="container">
+                <!-- サイドバー -->
+                <div class="sidebar">
+                    <ul>
+                        <li><a href="/group-e/main/menu.jsp">メニュー</a></li>
+                        <li class="score-gakusei-link"><a href="#">学生</a>
+                            <ul class="sub-menu" style="display: none;">
+                                <li><a href="/group-e/student/student_list.jsp">学生管理</a></li>
+                                <li><a href="/group-e/student/student_registration.jsp">学生登録</a></li>
+                                <li><a href="#">成績管理</a></li>
+                            </ul>
+                        </li>
+                        <li class="score-seiseki-link"><a href="#">成績</a>
+                            <ul class="sub-menu" style="display: none;">
+                                <li><a href="#">成績管理</a></li>
+                                <li><a href="#">成績登録</a></li>
+                                <li><a href="#">成績参照</a></li>
+                            </ul>
+                        </li>
+                        <li class="score-kamoku-link"><a href="#">科目</a>
+                            <ul class="sub-menu" style="display: none;">
+                                <li><a href="#">科目管理</a></li>
+                                <li><a href="#">科目一覧</a></li>
+                                <li><a href="#">科目登録</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
             <div class="my-2 text-end px-4">
                 <a href="SubjectCreate.action">新規登録</a>
             </div>
