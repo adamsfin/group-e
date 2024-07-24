@@ -20,7 +20,8 @@ public class StudentCreateExecuteAction extends Action{
 
 		if (Character.isDigit(req.getParameter("entYear").charAt(0))) {
 			req.setAttribute("year_error", "入学年度を入力してください");
-			req.getRequestDispatcher("student/student_registration.jsp").forward(req, res);
+			req.getRequestDispatcher("scoremanager/main/student_registration.jsp").forward(req, res);
+			return;
 		}
 
 		student.setNo(req.getParameter("id"));
@@ -36,11 +37,11 @@ public class StudentCreateExecuteAction extends Action{
 //			上手くいったらメインメニューにリダイレクトでもするか
 			System.out.println("登録成功");
 			session.removeAttribute("class_num_set");
-			res.sendRedirect("tester.jsp");
+			req.getRequestDispatcher("/group-e/scoremanager/main/student_create_done.jsp").forward(req, res);;
 		} else {
 			System.out.println("登録失敗");
 			req.setAttribute("no_error", "学生番号が重複しています");
-			req.getRequestDispatcher("student/student_registration.jsp").forward(req, res);
+			req.getRequestDispatcher("scoremanager/main/student_registration.jsp").forward(req, res);
 		}
 	}
 
