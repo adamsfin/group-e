@@ -28,7 +28,7 @@ public class StudentUpdateExecuteAction extends Action{
 //			上手くいったらメインメニューにリダイレクトでもするか
 			System.out.println("更新成功");
 			session.removeAttribute("student");
-			response.sendRedirect("scoremanager.main.StudentList.action");
+			request.getRequestDispatcher("student_update_done.jsp").forward(request, response);
 		}
 	}
 
