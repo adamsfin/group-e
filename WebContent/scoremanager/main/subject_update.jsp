@@ -13,7 +13,6 @@
 	    <h2 class="h3 mb-3 fw-normal bg-secondary bg-opacity-10 py-2 px-4 st_management">科目編集</h2>
 
 		<!-- 科目編集フォーム -->
-	    <h2>科目編集</h2>
 
 	    <c:if test="${!empty inputVal}"><c:set var="cd" value="${inputVal.cd}"/> </c:if>
 
