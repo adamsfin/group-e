@@ -9,7 +9,7 @@ public class MenuAction extends Action{
 
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse res) throws Exception {
-		req.getRequestDispatcher("/main/menu.jsp").forward(req, res);
+		req.getRequestDispatcher("/scoremanager/main/menu.jsp").forward(req, res);
 	}
 
 }
