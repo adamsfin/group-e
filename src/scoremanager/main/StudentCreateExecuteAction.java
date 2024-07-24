@@ -22,16 +22,23 @@ public class StudentCreateExecuteAction extends Action{
 
 		if (entYear==0) {
 			req.setAttribute("year_error", "入学年度を入力してください");
+
+
 			req.getRequestDispatcher("student_create.jsp").forward(req, res);
+
 			return;
 		}
 
 		StudentDao studentDao = new StudentDao();
 
+
 		if (studentDao.get(no)!=null) {
+
 			req.setAttribute("no_error", "学生番号が重複しています");
+
 			req.getRequestDispatcher("student_create.jsp").forward(req, res);
 			return;
+
 		}
 
 		HttpSession session = req.getSession();
