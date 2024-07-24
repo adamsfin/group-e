@@ -88,7 +88,6 @@
                     </table>
 <div class="container">
     <!-- メニュー見出し -->
-    <h2 class="h3 mb-3 fw-normal bg-secondary bg-opacity-10 py-2 px-4 st_management">科目登録</h2>
     <!-- サイドバー -->
     <div class="sidebar">
         <ul>
