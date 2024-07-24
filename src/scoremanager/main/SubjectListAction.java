@@ -15,7 +15,7 @@ public class SubjectListAction extends Action {
 		util.setSubjects(req);
 
 		// リクエストをsubject_list.jspにフォワードする
-		req.getRequestDispatcher("subject_list.jsp").forward(req, res);
+		req.getRequestDispatcher("/scoremanager/main/subject_list.jsp").forward(req, res);
 	}
 
 }

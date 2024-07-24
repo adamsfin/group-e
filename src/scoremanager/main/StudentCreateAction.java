@@ -35,6 +35,6 @@ public class StudentCreateAction extends Action{
 
         // JSP ページにフォワードします
         // 'student/student_registration.jsp' という JSP にリクエストを転送し、学生の登録フォームを表示します
-        req.getRequestDispatcher("student_registration.jsp").forward(req, res);
+        req.getRequestDispatcher("student_create.jsp").forward(req, res);
     }
 }
