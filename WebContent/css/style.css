@@ -16,13 +16,17 @@
 }
 .sidebar .score-gakusei-link ul.sub-menu {
     margin-top: 10px; /* 任意のスペース */
+    margin-left: 15px;
 }
 
 .sidebar .score-seiseki-link ul.sub-menu {
     margin-top: 10px; /* 任意のスペース */
+    margin-left: 15px;
 }
+
 .sidebar .score-kamoku-link ul.sub-menu  {
     margin-top: 10px; /* 任意のスペース */
+    margin-left: 15px;
 }
 
 
