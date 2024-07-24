@@ -11,6 +11,54 @@
     <c:param name="scripts"></c:param>
 
     <c:param name="content">
+
+    <%--サイドバー --%>
+<link rel="stylesheet" type="text/css" href="styles.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+    $('.sidebar .score-gakusei-link').click(function() {
+        $('.sidebar .score-gakusei-link .sub-menu').toggle();
+    });
+
+    $('.sidebar .score-seiseki-link').click(function() {
+        $('.sidebar .score-seiseki-link .sub-menu').toggle();
+    });
+
+    $('.sidebar .score-kamoku-link').click(function() {
+        $('.sidebar .score-kamoku-link .sub-menu').toggle();
+    });
+});
+</script>
+
+<div class="container">
+<!-- メニュー見出し -->
+<h2 class="h3">メニュー</h2>
+    <!-- サイドバー -->
+    <div class="sidebar">
+        <ul>
+        <li><a href="menu.jsp">メニュー</a></li>
+            <li class="score-gakusei-link"><a href="#">学生管理</a>
+                <ul class="sub-menu" style="display: none;">
+                	<li><a href="StudentList.action">学生一覧</a></li>
+                    <li><a href="StudentCreate.action">学生登録</a></li>
+                </ul>
+            </li>
+            <li class="score-seiseki-link"><a href="#">成績管理</a>
+                <ul class="sub-menu" style="display: none;">
+                    <li><a href="TestRegist.action">成績登録</a></li>
+                    <li><a href="TestList.action">成績参照</a></li>
+                </ul>
+            </li>
+            <li class="score-kamoku-link"><a href="#">科目管理</a>
+                <ul class="sub-menu" style="display: none;">
+                	<li><a href="SubjectList.action">科目一覧</a></li>
+                    <li><a href="SubjectCreate.action">科目登録</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
         <section class="mo-4">
             <h2 class="h3 mb-3 fw-norma bg-secondary bg-opacity-10 py-2 px-4">学生管理</h2>
             <div class="my-2 text-end px-4">
@@ -38,6 +86,7 @@
                             </c:forEach>
                         </select>
                     </div>
+
                     <div class="col-2 form-check text-center">
                         <label class="form-check-label" for="student-f3-check">在学中
                             <%-- パラメーターf3が存在している場合checkboxを追記 --%>
@@ -86,54 +135,9 @@
                             </tr>
                         </c:forEach>
                     </table>
+
 <div class="container">
-    <!-- メニュー見出し -->
-    <h2 class="h3 mb-3 fw-normal bg-secondary bg-opacity-10 py-2 px-4 st_management">科目登録</h2>
-    <!-- サイドバー -->
-    <div class="sidebar">
-        <ul>
-            <li><a href="/group-e/main/menu.jsp">メニュー</a></li>
-            <li class="score-gakusei-link"><a href="#">学生</a>
-                <ul class="sub-menu" style="display: none;">
-                    <li><a href="/group-e/student/student_list.jsp">学生管理</a></li>
-                    <li><a href="/group-e/student/student_registration.jsp">学生登録</a></li>
-                    <li><a href="/group-e/student/student_update.jsp">学生変更</a></li>
-                </ul>
-            </li>
-            <li class="score-seiseki-link"><a href="#">成績</a>
-                <ul class="sub-menu" style="display: none;">
-                    <li><a href="/group-e/subject_manage.jsp">成績管理</a></li>
-                    <li><a href="/group-e/subject_manage.jsp">成績登録</a></li>
-                    <li><a href="/group-e/subject_manage.jsp">成績参照</a></li>
-                </ul>
-            </li>
-            <li class="score-kamoku-link"><a href="#">科目</a>
-                <ul class="sub-menu" style="display: none;">
-                    <li><a href="subject_list.jsp">科目管理</a></li>
-                    <li><a href="subject_list.jsp">科目一覧</a></li>
-                    <li><a href="subject_create.jsp">科目登録</a></li>
-                </ul>
-            </li>
-        </ul>
-    </div>
-
-   <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-    $(document).ready(function() {
-        $('.sidebar .score-gakusei-link').click(function() {
-            $('.sidebar .score-gakusei-link .sub-menu').toggle();
-        });
-
-        $('.sidebar .score-seiseki-link').click(function() {
-            $('.sidebar .score-seiseki-link .sub-menu').toggle();
-        });
-
-        $('.sidebar .score-kamoku-link').click(function() {
-            $('.sidebar .score-kamoku-link .sub-menu').toggle();
-        });
-    });
-
+<script type="text/javascript">
     function loadSubjects() {
         var subjects = JSON.parse(localStorage.getItem("subjects")) || [];
         var table = document.getElementById("subjectTable");
