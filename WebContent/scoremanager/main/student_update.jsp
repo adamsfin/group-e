@@ -32,7 +32,7 @@
 				</div>
 				<div class="mb-3">
 				<label class="form-label" for="name">氏名</label>
-				<input type="text" id="name" name="name" placeholder="氏名を入力してください" required class="form-control" value="${student.name}">
+				<input type="text" id="name" name="name" placeholder="氏名を入力してください" maxlength="10" required class="form-control" value="${student.name}">
 				</div>
 				<div class="mb-3">
 				<label class="form-label" for="classnum">クラス</label>
