@@ -135,6 +135,7 @@ $(document).ready(function() {
                             </tr>
                         </c:forEach>
                     </table>
+
 <div class="container">
 <script type="text/javascript">
     function loadSubjects() {
