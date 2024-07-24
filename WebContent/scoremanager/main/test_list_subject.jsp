@@ -4,11 +4,17 @@
 
 <div class="subject_name">科目：${subject.name}(${subject.cd})</div>
 
+<%
+	@SuppressWarnings("unchecked")
+	List<TestListSubject> list = (List<TestListSubject>)request.getAttribute("testListSub");
+%>
+
 <table>
 	<tr class="list_header">
 		<th>入学年度</th><th>クラス</th><th>学生番号</th><th>氏名</th><th>１回</th><th>２回</th>
 	</tr>
-	<% for (TestListSubject test : (List<TestListSubject>)request.getAttribute("testListSub")) { %>
+
+	<% for (TestListSubject test : list) { %>
 		<tr>
 			<td><%= test.getEntYear() %></td>
 			<td><%= test.getClassNum() %></td>
