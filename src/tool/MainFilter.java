@@ -18,14 +18,17 @@ public class MainFilter implements Filter {
 		ServletRequest request, ServletResponse response,
 		FilterChain chain
 	) throws IOException, ServletException {
-		HttpSession session = ((HttpServletRequest)request).getSession();
+		HttpServletRequest httpServletRequest = (HttpServletRequest) request;
+		HttpSession session = httpServletRequest.getSession();
 
 		if (session.getAttribute("user")==null) {
 			((HttpServletResponse)response).sendRedirect("../Login.action");
 		} else {
-			if (!((HttpServletRequest)request).getServletPath().contains("TestRegist")) {
-			session.removeAttribute("inputVal");
-			session.removeAttribute("tests");
+			if (!httpServletRequest.getServletPath().contains("TestRegist")) {
+				session.removeAttribute("inputVal");
+				session.removeAttribute("tests");
+			} else if (!httpServletRequest.getServletPath().contains("StudentCreate")) {
+				session.removeAttribute("class_num_set");
 			}
 			chain.doFilter(request, response);
 		}
