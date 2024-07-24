@@ -9,7 +9,7 @@
 
 	<c:param name="content">
 		<c:if test="${!empty loginerr_msg}">
-			<p>{loginerr_msg}</p>
+			<p>${loginerr_msg}</p>
 		</c:if>
 		<form action="LoginExecute.action" method="post">
 			<label for="id">ＩＤ</label>
