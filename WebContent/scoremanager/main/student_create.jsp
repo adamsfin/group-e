@@ -63,7 +63,7 @@ $(document).ready(function() {
             </li>
             <li class="score-kamoku-link"><a href="#">科目管理</a>
                 <ul class="sub-menu" style="display: none;">
-                	<li><a href="SubjectList.action">科目管理</a></li>
+                	<li><a href="SubjectList.action">科目一覧</a></li>
                     <li><a href="SubjectCreate.action">科目登録</a></li>
 
                 </ul>
