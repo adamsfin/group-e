@@ -4,7 +4,7 @@
 
 <c:import url="/common/base.jsp">
     <c:param name="title">
-        <h1 class="toptitle">科目追加完了</h1>
+        <h1 class="toptitle">得点管理システム</h1>
     </c:param>
 
 	<c:param name="scripts"></c:param>
@@ -13,7 +13,7 @@
 		<h2>科目情報登録</h2>
 		<p>登録が完了しました</p>
 		<a href="SubjectCreate.action">戻る</a>
-		<a href="SubjectList.action">科目一覧リンク</a>
+		<a href="SubjectList.action">科目一覧</a>
 	</c:param>
 
 </c:import>
