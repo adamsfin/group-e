@@ -27,7 +27,7 @@ public class MainFilter implements Filter {
 			if (!httpServletRequest.getServletPath().contains("TestRegist")) {
 				session.removeAttribute("inputVal");
 				session.removeAttribute("tests");
-			} else if (!httpServletRequest.getServletPath().contains("StudentCreate")) {
+			} if (!httpServletRequest.getServletPath().contains("StudentCreate")) {
 				session.removeAttribute("class_num_set");
 			}
 			chain.doFilter(request, response);
