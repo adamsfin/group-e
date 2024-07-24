@@ -97,7 +97,7 @@ $(document).ready(function() {
                         </div>
                         <div class="col-4">
                             <label class="form-label" for="student-classNum">クラス</label>
-                        	<select class="form-control" id="student-classNum" name="classNum" maxlength="3">
+                        	<select class="form-control" id="student-classNum" name="classNum">
                         		<% for (String cNum:classNum) { %>
                         		<option value=<%= cNum %>><%= cNum %>
                         		<% } %>
