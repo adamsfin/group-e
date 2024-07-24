@@ -87,10 +87,12 @@ $(document).ready(function() {
 	                        		<option value=<%= year %>><%= year %>
 	                        	<% } %>
 	                        </select>
+	                        <div class="entYear_error">${year_error}</div>
                         </div>
                         <div class="col-4">
                             <label class="form-label" for="student-id">学生番号</label>
                             <input type="text" class="form-control" id="student-id" name="id" required>
+                            <div class="no_error">${no_error}</div>
                         </div>
                         <div class="col-4">
                             <label class="form-label" for="student-name">氏名</label>
