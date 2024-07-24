@@ -13,36 +13,49 @@ public class StudentCreateExecuteAction extends Action{
 
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse res) throws Exception {
-		HttpSession session = req.getSession();
-		Teacher teacher = (Teacher)session.getAttribute("user");
-		StudentDao studentDao = new StudentDao();
-		Student student = new Student();
+		String
+			no = req.getParameter("id"),
+			name = req.getParameter("name"),
+			classNum = req.getParameter("classNum");
+		Integer entYear = Integer.parseInt(req.getParameter("entYear"));
 
-		if (Character.isDigit(req.getParameter("entYear").charAt(0))) {
+
+		if (entYear==0) {
 			req.setAttribute("year_error", "入学年度を入力してください");
-			req.getRequestDispatcher("scoremanager/main/student_registration.jsp").forward(req, res);
+
+
+			req.getRequestDispatcher("student_create.jsp").forward(req, res);
+
 			return;
 		}
 
-		student.setNo(req.getParameter("id"));
-		student.setName(req.getParameter("name"));
-		student.setEntYear(Integer.parseInt(req.getParameter("entYear")));
-		student.setClassNum(req.getParameter("classNum"));
-		student.setAttend(true);
-		student.setSchool(teacher.getSchool());
+		StudentDao studentDao = new StudentDao();
 
-		boolean bool = studentDao.save(student);
 
-		if (bool == true) {
-//			上手くいったらメインメニューにリダイレクトでもするか
-			System.out.println("登録成功");
-			session.removeAttribute("class_num_set");
-			req.getRequestDispatcher("/group-e/scoremanager/main/student_create_done.jsp").forward(req, res);;
-		} else {
-			System.out.println("登録失敗");
+		if (studentDao.get(no)!=null) {
+
 			req.setAttribute("no_error", "学生番号が重複しています");
-			req.getRequestDispatcher("scoremanager/main/student_registration.jsp").forward(req, res);
+
+			req.getRequestDispatcher("student_create.jsp").forward(req, res);
+			return;
+
 		}
+
+		HttpSession session = req.getSession();
+		Teacher user = (Teacher)session.getAttribute("user");
+
+		Student student = new Student();
+		student.setNo(no);
+		student.setName(name);
+		student.setEntYear(entYear);
+		student.setClassNum(classNum);
+		student.setAttend(true);
+		student.setSchool(user.getSchool());
+
+		studentDao.save(student);
+
+		session.removeAttribute("class_num_set");
+		req.getRequestDispatcher("student_create_done.jsp").forward(req, res);
 	}
 
 }
