@@ -6,8 +6,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
-	<link rel="stylesheet" href="../css/bootstrap.min.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
+<link rel="stylesheet" href="../css/bootstrap.min.css">
 </head>
 
 <body>
