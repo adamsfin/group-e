@@ -33,7 +33,7 @@ $(document).ready(function() {
             <li class="score-seiseki-link"><a href="#">成績</a>
                 <ul class="sub-menu" style="display: none;">
                 	<li><a href="#">成績管理</a></li>
-                    <li><a href="TestResist.action">成績登録</a></li>
+                    <li><a href="TestRegist.action">成績登録</a></li>
                     <li><a href="TestList.action">成績参照</a></li>
                 </ul>
             </li>
