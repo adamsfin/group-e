@@ -136,7 +136,6 @@ $(document).ready(function() {
                         </c:forEach>
                     </table>
 
-<div class="container">
 <script type="text/javascript">
     function loadSubjects() {
         var subjects = JSON.parse(localStorage.getItem("subjects")) || [];
