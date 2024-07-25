@@ -151,6 +151,7 @@ body {
     box-sizing: border-box;
 }
 
+
 #filter {
     display: flex;
     flex-wrap: wrap;
@@ -344,6 +345,26 @@ input[name="login"]:hover {
 }
 
 /* 学生登録 */
-.stu-create {
-
+.create {
+	width: 600px;
+	margin: 0 auto;
+	padding: 20px;
+	display: flex;
+	flex-direction:column;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #ffffff;
 }
+
+#create-button {
+    width: 40%;
+    padding: 10px 0;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
