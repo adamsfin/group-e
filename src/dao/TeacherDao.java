@@ -58,21 +58,17 @@ public class TeacherDao extends Dao {
 
 		PreparedStatement st;
 		st=con.prepareStatement(
-				"select * from teacher where id = ? and password=?");
+				"select * from teacher where id=? and password=?");
 		st.setString(1, id);
 		st.setString(2, password);
 		ResultSet rs=st.executeQuery();
-		SchoolDao schoolDao = new SchoolDao();
 
-		while (rs.next()) {
+		if (rs.next()) {
+			SchoolDao schoolDao = new SchoolDao();
 			teacher=new Teacher();
 			teacher.setId(rs.getString("id"));
 			teacher.setPassword(rs.getString("password"));
 			teacher.setSchool(schoolDao.get(rs.getString("school_cd")));
-
-		if (teacher != null && !(teacher.getPassword().equals(password))) {
-			teacher = null;
-			}
 		}
 
 		st.close();
