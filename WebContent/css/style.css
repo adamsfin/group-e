@@ -304,6 +304,7 @@ p {
 .login-title {
   text-align: center;
   margin: 0;
+  font-size: 28px;
 }
 
 label[for="id"],
@@ -323,7 +324,7 @@ input[name="password"] {
 label[for="chk_d_ps"] {
 	display: block;
     text-align: center;
-    margin-bottom: 10px;
+    margin: 8px 0 12px;
 }
 
 input[name="login"] {

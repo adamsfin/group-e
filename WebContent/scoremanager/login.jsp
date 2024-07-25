@@ -13,7 +13,7 @@
 		</c:if>
 		<div class="login">
 			<form action="LoginExecute.action" method="post">
-				<h3 class="login-title">ログイン</h3>
+				<h2 class="login-title">ログイン</h2>
 				<label for="id">ＩＤ</label>
 				<input type="text" name="id" placeholder="半角でご入力ください" pattern="^[0-9A-Za-z]+$" title="半角英数字" required="required">
 				<label for="password">パスワード</label>
