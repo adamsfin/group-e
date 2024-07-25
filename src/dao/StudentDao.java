@@ -291,4 +291,49 @@ public class StudentDao extends Dao {
 			return false;
 		}
 	}
+
+	public List<Student> dropoutfilter(School school) throws Exception {
+		List<Student> list = new ArrayList<>();
+		Connection connection = getConnection();
+		PreparedStatement statement = null;
+		ResultSet rSet = null;
+		Student student;
+
+		try {
+
+			statement = connection.prepareStatement("select * from student where is_attend = false and school_cd = ?");
+			statement.setString(1, school.getCd());
+			rSet = statement.executeQuery();
+
+			while (rSet.next()) {
+				student = new Student();
+				student.setNo(rSet.getString("no"));
+				student.setName(rSet.getString("name"));
+				student.setEntYear(rSet.getInt("ent_year"));
+				student.setClassNum(rSet.getString("class_num"));
+				student.setAttend(rSet.getBoolean("is_attend"));
+				list.add(student);
+			}
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			if (statement != null) {
+				try {
+					statement.close();
+				} catch (SQLException sqle) {
+					throw sqle;
+				}
+			}
+			if (connection != null) {
+				try {
+					connection.close();
+				} catch (SQLException sqle) {
+					throw sqle;
+				}
+			}
+		}
+
+		return list;
+
+	}
 }

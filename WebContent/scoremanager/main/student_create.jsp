@@ -53,6 +53,7 @@ $(document).ready(function() {
                 	<li><a href="StudentList.action">学生一覧</a></li>
                     <li><a href="StudentCreate.action">学生登録</a></li>
 
+
                 </ul>
             </li>
             <li class="score-seiseki-link"><a href="#">成績管理</a>
