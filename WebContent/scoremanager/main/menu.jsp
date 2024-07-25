@@ -35,8 +35,8 @@ $(document).ready(function() {
         <li><a href="menu.jsp">メニュー</a></li>
             <li class="score-gakusei-link"><a href="#">学生管理</a>
                 <ul class="sub-menu" style="display: none;">
-                	<li><a href="StudentList.action">学生一覧</a></li>
                     <li><a href="StudentCreate.action">学生登録</a></li>
+                    <li><a href="StudentList.action">学生一覧</a></li>
                      <li><a href="StudentDropOutList.action">退学者一覧</a></li>
                 </ul>
             </li>
@@ -48,8 +48,9 @@ $(document).ready(function() {
             </li>
             <li class="score-kamoku-link"><a href="#">科目管理</a>
                 <ul class="sub-menu" style="display: none;">
+                	<li><a href="SubjectCreate.action">科目登録</a></li>
                 	<li><a href="SubjectList.action">科目一覧</a></li>
-                    <li><a href="SubjectCreate.action">科目登録</a></li>
+
                 </ul>
             </li>
         </ul>
