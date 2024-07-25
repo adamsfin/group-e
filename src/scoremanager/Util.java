@@ -28,9 +28,10 @@ public class Util {
 
 	public void setEntYearSet(HttpServletRequest request) throws Exception {
 		dao.Dao dao = new Dao();
+		Connection connection = dao.getConnection();
+		PreparedStatement statement = null;
 		try {
-			Connection connection = dao.getConnection();
-			PreparedStatement statement = connection.prepareStatement(
+			statement = connection.prepareStatement(
 				"select distinct ent_year from student where school_cd=? order by ent_year");
 			statement.setString(1, getUser(request).getSchool().getCd());
 			ResultSet set = statement.executeQuery();
@@ -41,6 +42,9 @@ public class Util {
 			request.setAttribute("entYearSet", entYear);
 		} catch (Exception e) {
 			e.printStackTrace();
+		} finally {
+			connection.close();
+			statement.close();
 		}
 	}
 

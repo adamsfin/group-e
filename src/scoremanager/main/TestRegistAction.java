@@ -18,6 +18,7 @@ public class TestRegistAction extends Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
 		if (request.getParameter("flag")!=null) {
 			String
 				num = request.getParameter("num"),
@@ -39,6 +40,7 @@ public class TestRegistAction extends Action {
 				request.setAttribute("input_val_error", "入学年度とクラスと科目と回数を選択してください");
 
 			} else {
+
 				HttpSession session = request.getSession();
 				Teacher user = (Teacher)session.getAttribute("user");
 				SubjectDao subjectDao = new SubjectDao();
@@ -52,6 +54,7 @@ public class TestRegistAction extends Action {
 				else
 					session.setAttribute("tests", list);
 			}
+
 		}
 		setRequestData(request, response);
 		request.getRequestDispatcher("test_regist.jsp").forward(request, response);
