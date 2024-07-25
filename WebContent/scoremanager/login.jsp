@@ -3,7 +3,7 @@
 <% request.setCharacterEncoding ("UTF-8"); %>
 <c:import url="/common/base.jsp">
 	<c:param name="title">
-		<h2 class="toptitle">ログイン</h2>
+		<h2 class="toptitle">得点管理システム</h2>
 
 	</c:param>
 
@@ -11,15 +11,16 @@
 		<c:if test="${!empty loginerr_msg}">
 			<p>${loginerr_msg}</p>
 		</c:if>
-		<form action="LoginExecute.action" method="post">
-			<label for="id">ＩＤ</label>
-			<input type="text" name="id" placeholder="半角でご入力ください" pattern="^[0-9A-Za-z]+$" title="半角英数字" required="required">
-			<label for="password">パスワード</label>
-			<input type="password" name="password" placeholder="20文字以内の半角英数字でご入力ください" pattern="^[0-9A-Za-z]{1,20}$" title="20文字以内の半角英数字" required="required">
-			<label for="chk_d_ps">パスワードを表示</label>
-			<input type="checkbox" name="chk_d_ps" onchange="togglePasswordVisibility()">
-			<input type="submit" name="login" value="ログイン">
-		</form>
+		<div class="login">
+			<form action="LoginExecute.action" method="post">
+				<label for="id">ＩＤ</label>
+				<input type="text" name="id" placeholder="半角でご入力ください" pattern="^[0-9A-Za-z]+$" title="半角英数字" required="required">
+				<label for="password">パスワード</label>
+				<input type="password" name="password" placeholder="20文字以内の半角英数字でご入力ください" pattern="^[0-9A-Za-z]{1,20}$" title="20文字以内の半角英数字" required="required">
+				<label for="chk_d_ps">パスワードを表示 <input type="checkbox" name="chk_d_ps" onchange="togglePasswordVisibility()"></label>
+				<input type="submit" name="login" value="ログイン">
+			</form>
+		</div>
 	</c:param>
 
 	<c:param name="scripts">

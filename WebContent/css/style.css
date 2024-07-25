@@ -289,7 +289,39 @@ p {
     color: #666;
 }
 
+/* ログイン 画面*/
+.login {
+  width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
 
+input[name="id"],
+input[name="password"] {
+  width: 93%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
 
+label[for="chk_d_ps"] {
+	display: block;
+    text-align: center;
+}
 
+input[name="login"] {
+  display: block;
+  margin: auto;
+  width: 40%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
 
