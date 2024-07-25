@@ -291,54 +291,59 @@ p {
 
 /* ログイン画面*/
 .login {
-  width: 550px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 15px;
-  padding: 18px 30px 20px;
-  background-color: #ffffff;
-  border: 0.5px solid #ccc;
-  border-radius: 5px;
+	width: 550px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 15px;
+	padding: 18px 30px 20px;
+	background-color: #ffffff;
+	border: 0.5px solid #ccc;
+	border-radius: 5px;
 }
 
 .login-title {
-  text-align: center;
-  margin: 0;
-  font-size: 28px;
+	text-align: center;
+	margin: 0;
+	font-size: 28px;
 }
 
 label[for="id"],
 label[for="password"] {
-  margin: 5px 0 5px;
+	margin: 5px 0 5px;
 }
 
 input[name="id"],
 input[name="password"] {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 5px;
-  border: 0.5px solid #ccc;
-  border-radius: 4px;
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 5px;
+	border: 0.5px solid #ccc;
+	border-radius: 4px;
 }
 
 label[for="chk_d_ps"] {
 	display: block;
-    text-align: center;
-    margin: 8px 0 12px;
+	text-align: center;
+	margin: 8px 0 12px;
 }
 
 input[name="login"] {
-  display: block;
-  margin: auto;
-  width: 35%;
-  padding: 10px;
-  background-color: #007bff;
-  color: #ffffff;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
+	display: block;
+	margin: auto;
+	width: 35%;
+	padding: 10px;
+	background-color: #007bff;
+	color: #ffffff;
+	border: none;
+	border-radius: 6px;
+	cursor: pointer;
 }
 
 input[name="login"]:hover {
-  background-color: #0064FF;
+	background-color: #0064FF;
+}
+
+/* 学生登録 */
+.stu-create {
+
 }
