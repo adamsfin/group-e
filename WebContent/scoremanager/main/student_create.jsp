@@ -52,7 +52,7 @@ $(document).ready(function() {
                 <ul class="sub-menu" style="display: none;">
                 	<li><a href="StudentList.action">学生一覧</a></li>
                     <li><a href="StudentCreate.action">学生登録</a></li>
-
+					<li><a href="StudentDropOutList.action">退学者一覧</a></li>
 
                 </ul>
             </li>
