@@ -45,7 +45,7 @@ public class TestListAction extends Action {
 				put("num", classNum);
 				put("subject", subjectCd);
 		}});
-		if (entYear!=0 && classNum!="" && subjectCd!="") {
+		if (entYear!=0 && !classNum.equals("") && !subjectCd.equals("")) {
 			Teacher user = (Teacher)request.getSession().getAttribute("user");
 			SubjectDao subjectDao = new SubjectDao();
 			TestListSubjectDao testListSubjectDao = new TestListSubjectDao();

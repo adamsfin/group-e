@@ -44,7 +44,8 @@ public class Util {
 			e.printStackTrace();
 		} finally {
 			connection.close();
-			statement.close();
+			if (statement!=null)
+				statement.close();
 		}
 	}
 
