@@ -56,7 +56,6 @@ $(document).ready(function() {
 </div>
 
 
-
     <!-- メニュー -->
     <div class="menu">
         <div class="menu-item student-management">
