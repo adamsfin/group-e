@@ -12,7 +12,6 @@
 	<c:param name="content">
     <h2 class="centered-heading">成績参照</h2>
 
-
 		<div class="test_search_form">
 			<div>科目情報</div>
 			<form action="TestList.action" method="post">
@@ -58,7 +57,10 @@
 		<c:if test="${!empty testListStu}"><jsp:include page="test_list_student.jsp"/></c:if>
 		<c:if test="${!empty testListSub}"><jsp:include page="test_list_subject.jsp"/></c:if>
 
+
 		<div class="none_list_error">${none_list}</div>
+		<a href="Menu.action">メニュー</a>
 	</c:param>
+
 
 </c:import>

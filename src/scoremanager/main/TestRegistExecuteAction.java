@@ -20,7 +20,6 @@ public class TestRegistExecuteAction extends Action {
 		List<Test> list = new ArrayList<Test>();
 		int point;
 		boolean pError = false;
-
 		for (Test test : (List<Test>)session.getAttribute("tests")) {
 			try {
 				point = Integer.parseInt(request.getParameter(test.getStudent().getNo()+"_point"));
@@ -35,7 +34,6 @@ public class TestRegistExecuteAction extends Action {
 				pError = true;
 			}
 		}
-
 		if (pError) {
 			request.getRequestDispatcher("TestRegist.action").forward(request, response);
 			return;
