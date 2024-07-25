@@ -41,6 +41,7 @@ $(document).ready(function() {
                 <ul class="sub-menu" style="display: none;">
                 	<li><a href="StudentList.action">学生一覧</a></li>
                     <li><a href="StudentCreate.action">学生登録</a></li>
+                    <li><a href="StudentDropOutList.action">退学者一覧</a></li>
                 </ul>
             </li>
             <li class="score-seiseki-link"><a href="#">成績管理</a>
