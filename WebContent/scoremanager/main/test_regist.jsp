@@ -63,25 +63,25 @@ $(document).ready(function() {
     	<h2>成績管理</h2>
 	    <div class="searchform">
 		<form action="TestRegist.action" method="post">
-			<select name="year">
+			<select name="f1">
 				<option value="0">--------</option>
 				<c:forEach var="year" items="${entYearSet}">
 					<option value="${year}"<c:if test="${inputVal.year==year}"> selected</c:if>>${year}</option>
 				</c:forEach>
 			</select>
-			<select name="num">
+			<select name="f2">
 				<option value="">--------</option>
 				<c:forEach var="num" items="${classNumSet}">
 					<option value="${num}"<c:if test="${inputVal.num==num}"> selected</c:if>>${num}</option>
 				</c:forEach>
 			</select>
-			<select name="subject">
+			<select name="f3">
 				<option value="">--------</option>
 				<c:forEach var="subject" items="${subjects}">
 					<option value="${subject.cd}"<c:if test="${inputVal.subject==subject.cd}"> selected</c:if>>${subject.name}</option>
 				</c:forEach>
 			</select>
-			<select name="no">
+			<select name="f4">
 				<option value="0">--------</option>
 				<c:forEach var="no" begin="1" end="2">
 					<option value="${no}"<c:if test="${inputVal.no==no}"> selected</c:if>>${no}</option>
