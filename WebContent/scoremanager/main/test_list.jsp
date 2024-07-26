@@ -19,24 +19,24 @@
 				<select name="f1">
 					<option value="0">--------</option>
 					<c:forEach var="year" items="${entYearSet}">
-						<option value="${year}"<c:if test="${inputVal.year==year}"> selected</c:if>>${year}</option>
+						<option value="${year}"<c:if test="${ent_year==year}"> selected</c:if>>${year}</option>
 					</c:forEach>
 				</select>
 				<label for="f2">クラス</label>
 				<select name="f2">
 					<option value="">--------</option>
 					<c:forEach var="num" items="${classNumSet}">
-						<option value="${num}"<c:if test="${inputVal.num==num}"> selected</c:if>>${num}</option>
+						<option value="${num}"<c:if test="${cNum==num}"> selected</c:if>>${num}</option>
 					</c:forEach>
 				</select>
 				<label for="f3">科目</label>
 				<select name="f3">
 					<option value="">--------</option>
 					<c:forEach var="subject" items="${subjects}">
-						<option value="${subject.cd}"<c:if test="${inputVal.subject==subject.cd}"> selected</c:if>>${subject.name}</option>
+						<option value="${subject.cd}"<c:if test="${subCd==subject.cd}"> selected</c:if>>${subject.name}</option>
 					</c:forEach>
 				</select>
-				<input type="hidden" name="sub_flag" value="1">
+				<input type="hidden" name="f" value="sj">
 				<input type="submit" value="検索">
 			</form>
 			<div class="input_val_error">${inputVal_error}</div>
@@ -44,8 +44,8 @@
 			<div>学生情報</div>
 			<form action="TestList.action" method="post">
 				<label for="f4">学生番号</label>
-				<input type="text" name="f4" value="${inputNo}" placeholder="学生番号を入力してください">
-				<input type="hidden" name="stu_flag" value="1">
+				<input type="text" name="f4" value="${f4}" placeholder="学生番号を入力してください">
+				<input type="hidden" name="f" value="st">
 				<input type="submit" value="検索">
 			</form>
 		</div>
