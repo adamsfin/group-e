@@ -344,3 +344,13 @@ input[name="login"]:hover {
 	background-color: #0064FF;
 }
 
+/* 一覧画面 */
+.table {
+	border-spacing: 0;
+}
+
+.table th, .table td {
+	border-bottom: 1px solid #ccc;
+    padding: 10px;
+}
+
