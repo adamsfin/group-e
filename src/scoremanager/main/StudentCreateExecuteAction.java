@@ -14,15 +14,16 @@ public class StudentCreateExecuteAction extends Action{
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse res) throws Exception {
 		String
-			no = req.getParameter("id"),
+			no = req.getParameter("no"),
 			name = req.getParameter("name"),
 			classNum = req.getParameter("classNum");
 		Integer entYear = Integer.parseInt(req.getParameter("entYear"));
 
 
 		if (entYear==0) {
+			req.setAttribute("no", no);
+			req.setAttribute("name", name);
 			req.setAttribute("year_error", "入学年度を入力してください");
-
 
 			req.getRequestDispatcher("student_create.jsp").forward(req, res);
 
@@ -33,7 +34,8 @@ public class StudentCreateExecuteAction extends Action{
 
 
 		if (studentDao.get(no)!=null) {
-
+			req.setAttribute("no", no);
+			req.setAttribute("name", name);
 			req.setAttribute("no_error", "学生番号が重複しています");
 
 			req.getRequestDispatcher("student_create.jsp").forward(req, res);

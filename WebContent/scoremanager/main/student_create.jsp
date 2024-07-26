@@ -90,12 +90,12 @@ $(document).ready(function() {
                         </div>
                         <div class="col-4">
                             <label class="form-label" for="student-id">学生番号</label>
-                            <input type="text" class="form-control" id="student-id" name="id" maxlength="10" required>
+                            <input type="text" class="form-control" id="student-no" name="no" value="${no}" maxlength="10" required>
                             <div class="no_error">${no_error}</div>
                         </div>
                         <div class="col-4">
                             <label class="form-label" for="student-name">氏名</label>
-                            <input type="text" class="form-control" id="student-name" name="name" maxlength="10" required>
+                            <input type="text" class="form-control" id="student-name" name="name" value="${name}" maxlength="10" required>
                         </div>
                         <div class="col-4">
                             <label class="form-label" for="student-classNum">クラス</label>
