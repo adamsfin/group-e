@@ -73,7 +73,6 @@
 			</div>
 		</c:if>
 
-
 		${param.title}
 		${param.scripts}
 		${param.content}
