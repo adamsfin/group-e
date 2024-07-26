@@ -16,8 +16,9 @@ ${param.scripts}
 ${param.content}
 
 <!-- 教師の名前を表示 -->
-<span>${user.name}&nbsp;様&nbsp;&nbsp;&nbsp;</span>
-<a href="/group-e/scoremanager/main/logout.jsp"> ログアウト</a>
-
+<div class="header-right">
+  <span>${user.name}&nbsp;様&nbsp;&nbsp;&nbsp;</span>
+  <a href="/group-e/scoremanager/main/logout.jsp">ログアウト</a>
+</div>
 </body>
 </html>
