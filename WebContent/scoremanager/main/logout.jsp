@@ -5,7 +5,7 @@
 <%-- リクエストの文字エンコーディングを設定 --%>
 <% request.setCharacterEncoding("UTF-8"); %>
 
-<c:import url="/common/base.jsp">
+<c:import url="/common/base.logout.jsp">
     <c:param name="title">
         <%-- ページのタイトル：得点管理システム --%>
         <h1 class="toptitle">得点管理システム</h1>

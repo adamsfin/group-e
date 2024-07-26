@@ -2,7 +2,6 @@ package scoremanager.main;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import bean.Student;
 import dao.StudentDao;
@@ -12,24 +11,18 @@ public class StudentUpdateExecuteAction extends Action{
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		HttpSession session = request.getSession();
-//		HttpSession session = req. getSession();
 		StudentDao studentDao = new StudentDao();
-//		Student student = (Student)session.getAttribute("student");
-		Student student = (Student)session.getAttribute("student");
+		Student student = new Student();
 
+		student.setNo(request.getParameter("no"));
 		student.setName(request.getParameter("name"));
-		student.setClassNum(request.getParameter("classnum"));
-		student.setAttend(request.getParameterValues("isattend")==null ? false : true);
+		student.setClassNum(request.getParameter("class_num"));
+		student.setEntYear(Integer.parseInt(request.getParameter("ent_year")));
+		student.setAttend(request.getParameterValues("is_attend")==null ? false : true);
 
-		boolean bool = studentDao.save(student);
+		studentDao.save(student);
 
-		if (bool == true) {
-//			上手くいったらメインメニューにリダイレクトでもするか
-			System.out.println("更新成功");
-			session.removeAttribute("student");
-			request.getRequestDispatcher("student_update_done.jsp").forward(request, response);
-		}
+		request.getRequestDispatcher("student_update_done.jsp").forward(request, response);
 	}
 
 }

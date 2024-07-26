@@ -39,13 +39,10 @@ public class TestRegistExecuteAction extends Action {
 			return;
 		}
 
-		session.removeAttribute("inputVal");
 		session.removeAttribute("tests");
 		if(list!=null) {
 			TestDao testDao = new TestDao();
-			boolean result = testDao.save(list);
-			if (result!=true)
-				response.sendRedirect("../error.jsp");
+			testDao.save(list);
 		}
 		request.getRequestDispatcher("test_regist_done.jsp").forward(request, response);
 

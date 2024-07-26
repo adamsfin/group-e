@@ -1,3 +1,4 @@
+
 <%-- 共通部分JSP --%>
 <%@ page contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" %>
@@ -14,10 +15,5 @@
 ${param.title}
 ${param.scripts}
 ${param.content}
-
-<!-- 教師の名前を表示 -->
-<span>${user.name}&nbsp;様&nbsp;&nbsp;&nbsp;</span>
-<a href="/group-e/scoremanager/main/logout.jsp"> ログアウト</a>
-
 </body>
 </html>

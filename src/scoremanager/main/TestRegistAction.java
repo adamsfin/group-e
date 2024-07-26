@@ -21,13 +21,13 @@ public class TestRegistAction extends Action {
 
 		if (request.getParameter("flag")!=null) {
 			String
-				num = request.getParameter("num"),
-				subject = request.getParameter("subject");
+				num = request.getParameter("f2"),
+				subject = request.getParameter("f3");
 			Integer
-				year = Integer.parseInt(request.getParameter("year")),
-				no = Integer.parseInt(request.getParameter("no"));
+				year = Integer.parseInt(request.getParameter("f1")),
+				no = Integer.parseInt(request.getParameter("f4"));
 
-			request.getSession().setAttribute("inputVal",
+			request.setAttribute("inputVal",
 				new HashMap<String, String>() {{
 					put("year", year.toString());
 					put("subject", subject);
