@@ -37,6 +37,7 @@
 		<section class="mo-4">
 			<div class="my-2 text-end px-4">
 				<a href="StudentCreate.action">新規登録</a>
+				<a href="Menu.action">メニュー</a>
 			</div>
 			<form method="get">
 				<div class="row border mx-3 mb-3 py-2 align-items-center rounded" id="filter">
