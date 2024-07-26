@@ -22,28 +22,28 @@
 				<div class="d-flex flex-column border mx-3 mb-3 py-2 px-4 align-items-start rounded" id="filter">
 				<div class="mb-3">
 				<label class="form-label" for="ent_year">入学年度</label>
-				<span id="ent_year">${student.entYear}</span>
-				<input type="hidden" id="ent_year" name="ent_year" value="${student.entYear}">
+				<span id="ent_year">${ent_year}</span>
+				<input type="hidden" id="ent_year" name="ent_year" value="${ent_year}">
 				</div>
 				<div class="mb-3">
 				<label class="form-label" for="student_id">学生番号</label>
 				<span id="student_id_display">${student.no}</span>
-				<input type="hidden" id="student_id" name="student_id" value="${student.no}">
+				<input type="hidden" id="student_id" name="student_id" value="${no}">
 				</div>
 				<div class="mb-3">
 				<label class="form-label" for="name">氏名</label>
-				<input type="text" id="name" name="name" placeholder="氏名を入力してください" maxlength="10" required class="form-control" value="${student.name}">
+				<input type="text" id="name" name="name" placeholder="氏名を入力してください" maxlength="10" required class="form-control" value="${name}">
 				</div>
 				<div class="mb-3">
 				<label class="form-label" for="classnum">クラス</label>
-				<select id="classnum" name="classnum" class="form-select">
-				<c:forEach var="cNum" items="${class_num_set}">
-					<option value=<c:out value="${cNum}"/><c:if test="${cNum==student.classNum}"> selected</c:if>><c:out value="${cNum}"/>
+				<select id="class_num" name="class_num" class="form-select">
+				<c:forEach var="num" items="${class_num_set}">
+					<option value="${num}"<c:if test="${num==cNum}"> selected</c:if>>${num}</option>
 				</c:forEach>
 				</select>
 				</div>
 				<div class="mb-3 form-check">
-				<input class="form-check-input" type="checkbox" id="isattend" name="isattend" value="true" <c:if test="${!empty attend}">checked</c:if> />
+				<input class="form-check-input" type="checkbox" id="is_attend" name="is_attend" value="true" <c:if test="${!empty attend}">checked</c:if> />
 				<label class="form-check-label ms-2" for="isattend">在学中</label>
 				</div>
 				<div class="mb-3 text-center">
@@ -55,7 +55,7 @@
 
 			            <!-- 戻るリンク -->
 			<div>
-				<a href="student_list.jsp">戻る</a>
+				<a href="StudentList.action">戻る</a>
 			</div>
 		</section>
 	</c:param>
