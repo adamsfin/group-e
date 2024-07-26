@@ -1,6 +1,5 @@
 package scoremanager.main;
 
-import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -22,10 +21,13 @@ public class TestListAction extends Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		if(request.getParameter("sub_flag")!=null) {
-			setTestListSubject(request, response);
-		} else if (request.getParameter("stu_flag")!=null) {
-			setTestListStudent(request, response);
+		String flag = request.getParameter("f");
+		if (flag!=null) {
+			if (flag.equals("sj")) {
+				setTestListSubject(request, response);
+			} else if (flag.equals("st")) {
+				setTestListStudent(request, response);
+			}
 		}
 
 		Util util = new Util();
@@ -40,11 +42,11 @@ public class TestListAction extends Action {
 		Integer entYear = Integer.parseInt(request.getParameter("f1"));
 		String	classNum = request.getParameter("f2"),
 				subjectCd = request.getParameter("f3");
-		request.setAttribute("inputVal", new HashMap<String, String>() {{
-				put("year", entYear.toString());
-				put("num", classNum);
-				put("subject", subjectCd);
-		}});
+
+		request.setAttribute("ent_year", entYear);
+		request.setAttribute("cNum", classNum);
+		request.setAttribute("subCd", subjectCd);
+
 		if (entYear!=0 && !classNum.equals("") && !subjectCd.equals("")) {
 			Teacher user = (Teacher)request.getSession().getAttribute("user");
 			SubjectDao subjectDao = new SubjectDao();
@@ -66,7 +68,9 @@ public class TestListAction extends Action {
 	private void setTestListStudent(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		StudentDao studentDao = new StudentDao();
 		String studentNo = request.getParameter("f4");
-		request.setAttribute("inputNo", studentNo);
+
+		request.setAttribute("f4", studentNo);
+
 		Student student = studentDao.get(studentNo);
 		if (student!=null) {
 			request.setAttribute("student", student);
