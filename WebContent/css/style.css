@@ -367,5 +367,13 @@ input[name="login"]:hover {
   text-decoration: underline; /* ホバー時に下線を表示 */
 }
 
+/* テーブルのデザイン */
+.table {
+	border-spacing: 0;
+}
 
+.table th, .table td {
+	border-bottom: 1px solid #ccc;
+    padding: 10px;
+}
 
