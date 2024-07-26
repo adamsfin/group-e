@@ -55,7 +55,7 @@
 
 			            <!-- 戻るリンク -->
 			<div>
-				<a href="student_list.jsp">戻る</a>
+				<a href="StudentList.action">戻る</a>
 			</div>
 		</section>
 	</c:param>
