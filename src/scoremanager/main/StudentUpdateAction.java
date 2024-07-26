@@ -19,9 +19,7 @@ public class StudentUpdateAction extends Action{
 		HttpSession session = req. getSession();
 		Teacher teacher = (Teacher)session.getAttribute("user");
 
-//		学生IDを受け取り （どっちで受け取るか）
 		String no = req.getParameter("no");
-//		String id = (String)session.getAttribute("id");
 
 		StudentDao studentDao = new StudentDao();
 		ClassNumDao classNumDao = new ClassNumDao();
@@ -43,7 +41,7 @@ public class StudentUpdateAction extends Action{
 		req.setAttribute("ent_year", student.getEntYear());
 		req.setAttribute("cNum", student.getClassNum());
 		req.setAttribute("attend", student.isAttend() ? "true" : null);
-		//JSPへフォワード 7
+		//JSPへフォワード
 		req.getRequestDispatcher("student_update.jsp").forward(req, res);
 	}
 

@@ -27,8 +27,8 @@
 				</div>
 				<div class="mb-3">
 				<label class="form-label" for="student_id">学生番号</label>
-				<span id="student_id_display">${student.no}</span>
-				<input type="hidden" id="student_id" name="student_id" value="${no}">
+				<span id="student_id_display">${no}</span>
+				<input type="hidden" id="student_no" name="no" value="${no}">
 				</div>
 				<div class="mb-3">
 				<label class="form-label" for="name">氏名</label>

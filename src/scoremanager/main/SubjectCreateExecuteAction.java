@@ -1,7 +1,5 @@
 package scoremanager.main;
 
-import java.util.HashMap;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -34,10 +32,8 @@ public class SubjectCreateExecuteAction extends Action {
 				return;
 			}
 		}
-		request.setAttribute("inputVal", new HashMap<String, String>(){{
-			put("cd", cd);
-			put("name", name);
-		}});
+		request.setAttribute("cd", cd);
+		request.setAttribute("name", name);
 		request.getRequestDispatcher("subject_create.jsp").forward(request, response);;
 	}
 }

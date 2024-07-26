@@ -16,11 +16,11 @@
 	    <h2>科目追加</h2>
 	    <form action="SubjectCreateExecute.action" method="get">
 	        <label for="cd">科目コード</label>
-	        <input type="text" name="cd" value="${inputVal.cd}" placeholder="科目コードを入力して下さい" maxlength="3" required>
+	        <input type="text" name="cd" value="${cd}" placeholder="科目コードを入力して下さい" maxlength="3" required>
 	        <div class="inputCd_error">${cd_error}</div>
 
 	   		<label for="name">科目名</label>
-	      	<input type="text" name="name" value="${inputVal.name}" placeholder="科目名を入力して下さい" maxlength="20" required>
+	      	<input type="text" name="name" value="${name}" placeholder="科目名を入力して下さい" maxlength="20" required>
 	        <input type="submit" value="登録">
 	    </form>
 	    <a href="SubjectList.action">戻る</a>
