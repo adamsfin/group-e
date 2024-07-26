@@ -48,7 +48,7 @@
 
 				<div class="sidebar">
 					<ul>
-					<li><a href="Menu.action">メニュー</a></li>
+					<li><a href="scoremanager/main/Menu.action">メニュー</a></li>
 						<li class="score-gakusei-link"><a href="#">学生管理</a>
 							<ul class="sub-menu" style="display: none;">
 								<li><a href="scoremanager/main/StudentList.action">学生一覧</a></li>
