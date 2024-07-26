@@ -1,8 +1,15 @@
-<%@page contentType="text/html; charset=UTF-8" %>
-<html>
-<body>
-<h3>エラーページです。</h3>
-<h1>下のリンクより、お戻りください</h1>
- <a href="/group-e/scoremanager/main/menu.jsp">メニューに戻る</a>
-</body>
-</html>
+<%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<% request.setCharacterEncoding("UTF-8"); %>
+
+<c:import url="/common/base.jsp">
+	<c:param name="title">
+		<h3>エラーが発生しました</h3>
+	</c:param>
+	<c:param name="scripts"></c:param>
+
+	<c:param name="content">
+		<h1>下のリンクより、お戻りください</h1>
+		<a href="scoremanager/main/Menu.action">メニューに戻る</a>
+	</c:param>
+</c:import>

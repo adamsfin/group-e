@@ -54,7 +54,7 @@
 				</div>
 			</form>
 
-			            <!-- 戻るリンク -->
+			<!-- 戻るリンク -->
 			<div>
 				<a href="StudentList.action">戻る</a>
 			</div>

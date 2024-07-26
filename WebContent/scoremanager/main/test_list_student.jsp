@@ -3,6 +3,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <% request.setCharacterEncoding("UTF-8"); %>
 
+
 <div class="student_name">氏名：${student.name}(${student.no})</div>
 
 <c:if test="${testListStu!=null}">

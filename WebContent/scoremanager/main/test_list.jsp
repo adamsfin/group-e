@@ -4,13 +4,12 @@
 <% request.setCharacterEncoding("UTF-8"); %>
 <c:import url="/common/base.jsp">
 	<c:param name="title">
-		<h1 class="toptitle">得点管理システム</h1>
+		<h2 class="centered-heading">成績参照</h2>
 	</c:param>
 
 	<c:param name="scripts"></c:param>
 
 	<c:param name="content">
-    <h2 class="centered-heading">成績参照</h2>
 
 		<div class="test_search_form">
 			<div>科目情報</div>
@@ -59,7 +58,6 @@
 
 
 		<div class="none_list_error">${none_list}</div>
-		<a href="Menu.action">メニュー</a>
 	</c:param>
 
 
