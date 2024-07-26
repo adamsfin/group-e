@@ -38,7 +38,3 @@
 	</c:param>
 
 </c:import>
-<!-- フッター -->
-<footer>
-    <p>© 2024 TIC<br>大原学園</p>
-</footer>
