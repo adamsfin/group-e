@@ -62,16 +62,14 @@ $(document).ready(function() {
 
 		<!-- 科目編集フォーム -->
 
-	    <c:if test="${!empty inputVal}"><c:set var="cd" value="${inputVal.cd}"/> </c:if>
-
 	    <form action="SubjectUpdateExecute.action" method="get">
 	        <label for="cd">科目コード</label>
-	        <input type="hidden" name="cd" value="${cd}">
-	        <div>${cd}</div>
+	        <input type="hidden" name="code" value="${code}">
+	        <div>${code}</div>
 	        <div class="subject_error">${subject_error}</div>
 
 	   		<label for="name">科目名</label>
-	      	<input type="text" name="name" value="${subject.name}" placeholder="科目名を入力して下さい" maxlength="20" required>
+	      	<input type="text" name="name" value="${name}" placeholder="科目名を入力して下さい" maxlength="20" required>
 	        <input type="submit" value="変更">
 	    </form>
 	    <a href="SubjectList.action">戻る</a>

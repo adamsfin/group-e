@@ -1,7 +1,5 @@
 package scoremanager.main;
 
-import java.util.HashMap;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -15,7 +13,7 @@ public class SubjectUpdateExecuteAction extends Action {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		// リクエストから科目コード（cd）と科目名（name）を取得する
-		String cd = request.getParameter("cd");
+		String code = request.getParameter("code");
 		String name = request.getParameter("name");
 
 		// SubjectDaoクラスのインスタンスを生成する
@@ -25,10 +23,10 @@ public class SubjectUpdateExecuteAction extends Action {
 		Util util = new Util();
 
 		// 科目が存在するかどうかを確認する
-		if (subjectDao.get(cd, util.getUser(request).getSchool()) != null) {
+		if (subjectDao.get(code, util.getUser(request).getSchool()) != null) {
 			// 科目オブジェクトを生成し、属性を設定する
 			Subject subject = new Subject();
-			subject.setCd(cd);
+			subject.setCd(code);
 			subject.setName(name);
 			subject.setSchool(util.getUser(request).getSchool());
 
@@ -40,10 +38,8 @@ public class SubjectUpdateExecuteAction extends Action {
 		} else {
 			// 科目が存在しない場合のエラーメッセージと、入力値をリクエスト属性に設定する
 			request.setAttribute("subject_error", "科目が存在していません");
-			request.setAttribute("inputVal", new HashMap<String, String>() {{
-				put("cd", cd);
-				put("name", name);
-			}});
+			request.setAttribute("code", code);
+			request.setAttribute("name", name);
 
 			// 科目が存在しない場合は、再度subject_update.jspにリクエストをフォワードする
 			request.getRequestDispatcher("subject_update.jsp").forward(request, response);

@@ -25,8 +25,8 @@ public class SubjectUpdateAction extends Action {
 		Subject subject = subjectDao.get(cd, util.getUser(request).getSchool());
 
 		// リクエスト属性にデータをセットする
-		request.setAttribute("cd", cd);
-		request.setAttribute("subject", subject);
+		request.setAttribute("code", cd);
+		request.setAttribute("name", subject.getName());
 
 		// リクエストをsubject_update.jspにフォワードする
 		request.getRequestDispatcher("subject_update.jsp").forward(request, response);
