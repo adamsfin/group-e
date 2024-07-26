@@ -344,13 +344,28 @@ input[name="login"]:hover {
 	background-color: #0064FF;
 }
 
-/* 一覧画面 */
-.table {
-	border-spacing: 0;
+.header-right {
+  position: fixed; /* 固定位置にする */
+  top: 0; /* 上から0px */
+  right: 0; /* 右から0px */
+  padding: 10px; /* パディングを追加して見やすくする */
+  background-color: #f8f9fa; /* 背景色を追加（オプション） */
+  border-bottom: 1px solid #ddd; /* 下に線を追加（オプション） */
+  z-index: 1000; /* 他の要素より上に表示するためのZ-index */
 }
 
-.table th, .table td {
-	border-bottom: 1px solid #ccc;
-    padding: 10px;
+.header-right span {
+  margin-right: 10px; /* ログアウトリンクとの間隔を調整 */
 }
+
+.header-right a {
+  text-decoration: none; /* リンクの下線を削除 */
+  color: #007bff; /* リンクの色を指定 */
+}
+
+.header-right a:hover {
+  text-decoration: underline; /* ホバー時に下線を表示 */
+}
+
+
 
