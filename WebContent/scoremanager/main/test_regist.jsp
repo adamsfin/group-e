@@ -13,32 +13,45 @@
 
 		<div class="searchform">
 		<form action="TestRegist.action" method="post">
-			<select name="f1">
-				<option value="0">--------</option>
-				<c:forEach var="year" items="${entYearSet}">
-					<option value="${year}"<c:if test="${inputVal.year==year}"> selected</c:if>>${year}</option>
-				</c:forEach>
-			</select>
-			<select name="f2">
-				<option value="">--------</option>
-				<c:forEach var="num" items="${classNumSet}">
-					<option value="${num}"<c:if test="${inputVal.num==num}"> selected</c:if>>${num}</option>
-				</c:forEach>
-			</select>
-			<select name="f3">
-				<option value="">--------</option>
-				<c:forEach var="subject" items="${subjects}">
-					<option value="${subject.cd}"<c:if test="${inputVal.subject==subject.cd}"> selected</c:if>>${subject.name}</option>
-				</c:forEach>
-			</select>
-			<select name="f4">
-				<option value="0">--------</option>
-				<c:forEach var="no" begin="1" end="2">
-					<option value="${no}"<c:if test="${inputVal.no==no}"> selected</c:if>>${no}</option>
-				</c:forEach>
-			</select>
+			<div>
+				<label class="form-label" for="test-f1-select">入学年度</label>
+				<select name="f1">
+					<option value="0">--------</option>
+					<c:forEach var="year" items="${entYearSet}">
+						<option value="${year}"<c:if test="${inputVal.year==year}"> selected</c:if>>${year}</option>
+					</c:forEach>
+				</select>
+			</div>
+			<div>
+				<label class="form-label" for="test-f2-select">クラス</label>
+				<select name="f2">
+					<option value="">--------</option>
+					<c:forEach var="num" items="${classNumSet}">
+						<option value="${num}"<c:if test="${inputVal.num==num}"> selected</c:if>>${num}</option>
+					</c:forEach>
+				</select>
+			</div>
+			<div>
+				<label class="form-label" for="test-f3-select">科目</label>
+				<select name="f3">
+					<option value="">--------</option>
+					<c:forEach var="subject" items="${subjects}">
+						<option value="${subject.cd}"<c:if test="${inputVal.subject==subject.cd}"> selected</c:if>>${subject.name}</option>
+					</c:forEach>
+				</select>
+			</div>
+			<div>
+				<label class="form-label" for="test-f4-select">回数</label>
+				<select name="f4">
+					<option value="0">--------</option>
+					<c:forEach var="no" begin="1" end="2">
+						<option value="${no}"<c:if test="${inputVal.no==no}"> selected</c:if>>${no}</option>
+					</c:forEach>
+				</select>
+			</div>
 			<input type="hidden" name="flag" value="1">
 			<input type="submit" value="検索">
+
 		</form>
 		</div>
 
