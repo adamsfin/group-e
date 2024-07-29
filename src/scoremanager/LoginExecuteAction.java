@@ -17,7 +17,10 @@ public class LoginExecuteAction extends Action{
 		Teacher teacher = teacherDao.login(req.getParameter("id"), req.getParameter("password"));
 
 		if (teacher==null) {
+			// ログインに失敗した場合のエラーメッセージと、入力したIDをリクエスト属性に設定する
 			req.setAttribute("loginerr_msg", "ログインに失敗しました。IDまたはパスワードが正しくありません。");
+			req.setAttribute("id", req.getParameter("id"));
+			// 再度login.jspにリクエストをフォワードする
 			req.getRequestDispatcher("login.jsp").forward(req, res);
 		} else {
 			HttpSession session = req.getSession();

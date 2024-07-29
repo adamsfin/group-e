@@ -77,7 +77,7 @@
             </c:if>
             <form action="LoginExecute.action" method="post">
                 <label for="id">ＩＤ</label>
-                <input type="text" name="id" placeholder="半角でご入力ください" pattern="^[0-9A-Za-z]+$" title="半角英数字" required="required">
+                <input type="text" name="id" value="${id}" placeholder="半角でご入力ください" pattern="^[0-9A-Za-z]+$" title="半角英数字" required="required">
                 <label for="password">パスワード</label>
                 <input type="password" name="password" placeholder="20文字以内の半角英数字でご入力ください" pattern="^[0-9A-Za-z]{1,20}$" title="20文字以内の半角英数字" required="required">
                 <label for="chk_d_ps">パスワードを表示 <input type="checkbox" name="chk_d_ps" onchange="togglePasswordVisibility()"></label>
