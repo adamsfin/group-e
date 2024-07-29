@@ -16,7 +16,7 @@
 			</c:when>
 			<c:otherwise>
 				<div>下記リンクより、メニューへ戻ってください。</div>
-				<a href="scoremanager/main/Menu.action">メニューに戻る</a>
+				<a href="Menu.action">メニューに戻る</a>
 			</c:otherwise>
 		</c:choose>
 	</c:param>

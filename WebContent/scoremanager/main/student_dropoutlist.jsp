@@ -3,9 +3,11 @@
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <% request.setCharacterEncoding("UTF-8"); %>
-<c:import url="/common/base.jsp">
+<c:import url="/common/base.kyoutuu.jsp">
 	<c:param name="title">
 		<h2 class="h3 mb-3 fw-norma bg-secondary bg-opacity-10 py-2 px-4">退学者一覧</h2>
+		<a href="Menu.action">メニュー</a>
+		<a href="scoremanager.main.StudentList.action">学生一覧</a>
 	</c:param>
 
 	<c:param name="scripts">
