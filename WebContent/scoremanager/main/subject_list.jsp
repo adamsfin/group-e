@@ -12,7 +12,6 @@
 	</c:param>
 
 	<c:param name="scripts"></c:param>
-
 	<c:param name="content">
 
 		<!-- メインコンテンツ -->
