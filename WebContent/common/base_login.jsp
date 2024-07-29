@@ -13,8 +13,6 @@
 			<h1 class="toptitle">
 				<span class="highlight">得点管理システム</span>
 			</h1>
-			<c:if test="${!empty user}">
-			</c:if>
 		</header>
 
 		<!-- メインコンテンツ -->
