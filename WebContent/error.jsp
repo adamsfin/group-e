@@ -9,7 +9,8 @@
 	<c:param name="scripts"></c:param>
 
 	<c:param name="content">
-		<h1>下のリンクより、お戻りください</h1>
-		<a href="scoremanager/main/Menu.action">メニューに戻る</a>
+		<h2>ログアウトされました。</h2>
+		<h2>サイド下のリンクよりログインし直してください</h2>
+		<a href="scoremanager/login.jsp">ログインする</a>
 	</c:param>
 </c:import>
