@@ -4,8 +4,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.SubjectDao; // daoパッケージからSubjectDaoクラスをインポート
-import scoremanager.Util; // scoremanagerパッケージからUtilクラスをインポート
 import tool.Action; // toolパッケージからActionクラスをインポート
+import tool.Util;
 
 public class SubjectDeleteExecuteAction extends Action {
 

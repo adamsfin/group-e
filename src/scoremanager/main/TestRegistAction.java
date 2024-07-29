@@ -11,8 +11,8 @@ import bean.Teacher;
 import bean.Test;
 import dao.SubjectDao;
 import dao.TestDao;
-import scoremanager.Util;
 import tool.Action;
+import tool.Util;
 
 public class TestRegistAction extends Action {
 

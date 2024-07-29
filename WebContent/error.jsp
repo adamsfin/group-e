@@ -9,8 +9,15 @@
 	<c:param name="scripts"></c:param>
 
 	<c:param name="content">
-		<h2>ログアウトされました。</h2>
-		<h2>サイド下のリンクよりログインし直してください</h2>
-		<a href="scoremanager/login.jsp">ログインする</a>
+		<c:choose>
+			<c:when test="${empty user}">
+				<div>未ログイン状態です。下記リンクからログインを行ってください。</div>
+			<a href="scoremanager/Login.action">ログイン</a>
+			</c:when>
+			<c:otherwise>
+				<div>下記リンクより、メニューへ戻ってください。</div>
+				<a href="scoremanager/main/Menu.action">メニューに戻る</a>
+			</c:otherwise>
+		</c:choose>
 	</c:param>
 </c:import>

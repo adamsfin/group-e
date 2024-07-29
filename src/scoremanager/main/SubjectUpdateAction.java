@@ -5,8 +5,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import bean.Subject;
 import dao.SubjectDao;
-import scoremanager.Util;
 import tool.Action; // toolパッケージからActionクラスをインポート
+import tool.Util;
 
 public class SubjectUpdateAction extends Action {
 

@@ -4,8 +4,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.SubjectDao;
-import scoremanager.Util;
 import tool.Action;
+import tool.Util;
 
 public class SubjectDeleteAction extends Action{
 
