@@ -3,8 +3,8 @@ package scoremanager.main;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import scoremanager.Util; // scoremanagerパッケージからUtilクラスをインポート
 import tool.Action; // toolパッケージからActionクラスをインポート
+import tool.Util;
 
 public class SubjectListAction extends Action {
 
