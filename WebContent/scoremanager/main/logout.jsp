@@ -6,10 +6,7 @@
 <% request.setCharacterEncoding("UTF-8"); %>
 
 <c:import url="/common/base.kyoutuu.jsp">
-    <c:param name="title">
-        <%-- ページのタイトル：得点管理システム --%>
-        <h1 class="toptitle">得点管理システム</h1>
-    </c:param>
+
 
     <c:param name="scripts"></c:param>
 
