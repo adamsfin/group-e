@@ -1,8 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <% request.setCharacterEncoding ("UTF-8"); %>
-<c:import url="/common/base.jsp">
->>>>>>> branch 'master' of https://github.com/adamsfin/group-e.git
+<c:import url="/common/base.login.jsp">
     <c:param name="title">
         <h2 class="login-title">ログイン</h2>
     </c:param>
