@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <% request.setCharacterEncoding ("UTF-8"); %>
-<c:import url="/common/base.login.jsp">
+<c:import url="/common/base.jsp">
+>>>>>>> branch 'master' of https://github.com/adamsfin/group-e.git
     <c:param name="title">
         <h2 class="login-title">ログイン</h2>
     </c:param>
@@ -10,10 +11,11 @@
         <style>
             /* ログイン画面のスタイル */
             .login {
-                width: 550px;
+                width: 570px;
                 margin-left: auto;
                 margin-right: auto;
                 margin-top: 15px;
+                margin-bottom: 20px;
                 padding: 18px 30px 20px;
                 background-color: #ffffff;
                 border: 0.5px solid #ccc;
@@ -22,7 +24,7 @@
 
             .login-title {
                 text-align: center;
-                margin: 0;
+                margin: 17px 0 0;
                 font-size: 28px;
             }
 
@@ -60,6 +62,13 @@
 
             input[name="login"]:hover {
                 background-color: #0064FF;
+            }
+
+            .login p {
+            	text-align: center;
+            	margin: 0;
+            	font-size: 15px;
+            	color: red;
             }
         </style>
 
