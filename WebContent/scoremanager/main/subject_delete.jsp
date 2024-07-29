@@ -12,13 +12,14 @@
 	<c:param name="content">
 
 		<!-- 科目追加フォーム -->
-		<p>「${subject.name}(${subject.cd})」を削除してもよろしいですか</p>
-		<form action="SubjectDeleteExecute.action" method="get">
-			<label for="cd">科目コード</label>
-			<input type="hidden" name="cd" value="${subject.cd}">
-			<input type="submit" value="削除">
-		</form>
-		<a href="SubjectList.action">戻る</a>
+		<div class="subject">
+			<p>「${subject.name}(${subject.cd})」を削除してもよろしいですか</p>
+			<form action="SubjectDeleteExecute.action" method="get">
+				<input type="hidden" name="cd" value="${subject.cd}">
+				<input type="submit" class="sub-button" style="background-color: #ff0044;" value="削除">
+			</form>
+			<a href="SubjectList.action">戻る</a>
+		</div>
 	</c:param>
 
 </c:import>

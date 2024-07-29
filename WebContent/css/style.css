@@ -196,6 +196,22 @@ footer p {
     padding: 10px;
 }
 
+/* 科目登録画面 */
+.subject {
+	width: 700px;
+	margin-left: 380px;
+	display: flex;
+    flex-direction: column;
+}
+
+.sub-button {
+	width: 60px;
+}
+
+.subject a {
+	margin: 10px 0;
+}
+
 /* 成績登録画面 */
 .searchform {
 	width: 700px;
