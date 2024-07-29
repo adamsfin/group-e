@@ -11,7 +11,7 @@
 	LocalDate date = LocalDate.now();
 %>
 
-<c:import url="/common/base.kyoutuu.jsp">
+<c:import url="/common/base.jsp">
 	<c:param name="title">
 		<h2>学生情報登録</h2>
 	</c:param>
