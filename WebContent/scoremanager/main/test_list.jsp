@@ -43,7 +43,7 @@
 			<div>学生情報</div>
 			<form action="TestList.action" method="post">
 				<label for="f4">学生番号</label>
-				<input type="text" name="f4" value="${f4}" placeholder="学生番号を入力してください">
+				<input type="text" name="f4" value="${f4}" placeholder="学生番号を入力してください" required>
 				<input type="hidden" name="f" value="st">
 				<input type="submit" value="検索">
 			</form>
