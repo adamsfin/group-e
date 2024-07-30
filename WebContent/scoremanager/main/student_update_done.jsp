@@ -7,6 +7,7 @@
 		<h2>学生情報変更</h2>
 	</c:param>
 
+
 	<c:param name="scripts"></c:param>
 
 	<c:param name="content">
