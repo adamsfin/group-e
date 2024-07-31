@@ -35,7 +35,7 @@
     </style>
 </head>
 <body>
-    <c:import url="/common/base.kyoutuu.jsp">
+    <c:import url="/common/base.jsp">
         <c:param name="title">
             <h2>科目情報変更</h2>
         </c:param>

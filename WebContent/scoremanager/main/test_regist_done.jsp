@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <% request.setCharacterEncoding("UTF-8"); %>
 
-<c:import url="/common/base.kyoutuu.jsp">
+<c:import url="/common/base.jsp">
 	<c:param name="title">
 		<h2>成績管理</h2>
 	</c:param>

@@ -4,7 +4,7 @@
 
 <c:import url="/common/base.jsp">
 	<c:param name="title">
-		<h2 class="h3 mb-3 fw-normal bg-secondary bg-opacity-10 py-2 px-4 st_management">科目情報登録</h2>
+		<h2 class="page-title">科目情報登録</h2>
 	</c:param>
 
 	<c:param name="scripts"></c:param>
@@ -12,7 +12,7 @@
 	<c:param name="content">
 
 		<!-- 科目追加フォーム -->
-		<div class="subject">
+		<div class="contents">
 			<form action="SubjectCreateExecute.action" method="get">
 				<label for="cd">科目コード</label>
 				<input type="text" class="form-control" name="cd" value="${cd}" placeholder="科目コードを入力して下さい" maxlength="3" required>
