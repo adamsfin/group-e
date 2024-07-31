@@ -5,14 +5,33 @@
 <%-- リクエストの文字エンコーディングを設定 --%>
 <% request.setCharacterEncoding("UTF-8"); %>
 
-<c:import url="/common/base.kyoutuu.jsp">
+<style>
+	div {
+	    width: 800px;
+	    margin-left: auto;
+	    margin-right: auto;
+	    margin-top: 10px;
+	}
 
+	h2 {
+		background-color: #DDDDDD;
+		font-size: 28px;
+		padding: 8px 24px;
+		text-align: left;
+	}
+</style>
+
+<c:import url="/common/base.login.jsp">
 
     <c:param name="scripts"></c:param>
+
     <c:param name="content">
-        <%-- ログアウトメッセージとリンク --%>
-    	<h2> ログアウト</h2>
-    	<div>ログアウトしました</div>
-    	<a href="../Login.action">ログイン</a>
+    	<div>
+	        <%-- ログアウトメッセージとリンク --%>
+	        <h2>ログアウト</h2>
+	    	<p>ログアウトしました</p>
+	    	<p></p>
+	    	<a href="../Login.action">ログイン</a>
+	    </div>
 	</c:param>
 </c:import>
