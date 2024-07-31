@@ -78,7 +78,6 @@ footer {
     padding: 10px 0;
     text-align: center; /* テキストを中央に揃える */
     border-top: 1px solid #ddd; /* 上部のボーダー */
-    position: fixed; /* ページの下部に固定 */
     bottom: 0; /* 下端に配置 */
     width: 100%; /* 幅を100%に設定 */
 
