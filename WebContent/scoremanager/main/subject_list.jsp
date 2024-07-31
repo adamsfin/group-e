@@ -15,7 +15,6 @@
 		<div class="contents">
 			<div class="my-2 text-end px-4">
 				<a href="SubjectCreate.action">新規登録</a>
-				<a href="Menu.action">メニュー</a>
 			</div>
 
 			<table class="table table-hover">

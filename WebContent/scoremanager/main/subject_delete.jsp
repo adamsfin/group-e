@@ -2,24 +2,56 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <% request.setCharacterEncoding("UTF-8"); %>
 
-<c:import url="/common/base.jsp">
-	<c:param name="title">
-		<h2 class="h3 mb-3 fw-normal bg-secondary bg-opacity-10 py-2 px-4 st_management">科目情報削除</h2>
-	</c:param>
+<head>
+	<style>
+		.contents {
+			width: 700px;
+			margin-left: 380px;
+			display: flex;
+		    flex-direction: column;
+		}
 
-	<c:param name="scripts"></c:param>
+		input[type="submit"] {
+			width: 60px;
+		    padding: 8px 0;
+		    background-color: #ff0044;
+		    border: none;
+		    color: white;
+		    border-radius: 5px;
+		    cursor: pointer;
+		    margin-top: 9px;
+		}
 
-	<c:param name="content">
+		input[type="submit"]:hover {
+			background-color: #db0f46;
+		}
 
-		<!-- 科目追加フォーム -->
-		<div class="subject">
-			<p>「${subject.name}(${subject.cd})」を削除してもよろしいですか</p>
-			<form action="SubjectDeleteExecute.action" method="get">
-				<input type="hidden" name="cd" value="${subject.cd}">
-				<input type="submit" class="sub-button" style="background-color: #ff0044;" value="削除">
-			</form>
-			<a href="SubjectList.action">戻る</a>
-		</div>
-	</c:param>
+		.contents a {
+			margin-top: 10px;
+		}
+	</style>
+</head>
 
-</c:import>
+<body>
+	<c:import url="/common/base.jsp">
+		<c:param name="title">
+			<h2 class="page-title">科目情報削除</h2>
+		</c:param>
+
+		<c:param name="scripts"></c:param>
+
+		<c:param name="content">
+
+			<!-- 科目追加フォーム -->
+			<div class="contents">
+				<p>「${subject.name}(${subject.cd})」を削除してもよろしいですか</p>
+				<form action="SubjectDeleteExecute.action" method="get">
+					<input type="hidden" name="cd" value="${subject.cd}">
+					<input type="submit" value="削除">
+				</form>
+				<a href="SubjectList.action">戻る</a>
+			</div>
+		</c:param>
+
+	</c:import>
+</body>
