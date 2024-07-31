@@ -193,6 +193,7 @@ label {
 
 /* ページタイトル */
 .page-title {
+	background-color: #DDDDDD;
 	margin: 10px 70px 10px 380px;
 	font-size: 28px;
 	padding: 8px 24px;
