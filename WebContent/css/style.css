@@ -74,20 +74,20 @@ html, body {
 
 /* フッターのスタイル */
 footer {
-    background-color: #d3d3d3; /* フッターの背景色 */
-    padding: 10px 0;
-    text-align: center; /* テキストを中央に揃える */
-    border-top: 1px solid #ddd; /* 上部のボーダー */
-    bottom: 0; /* 下端に配置 */
-    width: 100%; /* 幅を100%に設定 */
-
+    background-color: #d3d3d3; /* フッターの背景色: ライトグレー */
+    text-align: center;         /* テキストを中央揃え */
+    padding: 10px 0;            /* 上下に10pxの余白を設定 */
+    width: 100%;                 /* フッターの幅を画面全体に合わせる */
+	position: fixed; /* ページの下部に固定 */
+    bottom: 0;                  /* フッターを画面の一番下に固定 (positionプロパティが必要) */
 }
 
 footer p {
-    margin: 0;
-    color: #333;
-    font-size: 14px;
+    margin: 0;                  /* フッター内の<p>タグの外側の余白をゼロに設定 */
+    color: #333;                /* テキストの色: ダークグレー */
+    font-size: 14px;            /* テキストのサイズ: 14px */
 }
+
 
 
 /* フォームのスタイル */
