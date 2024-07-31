@@ -9,6 +9,10 @@
 		.num {
 			margin-top: 15px;
 		}
+
+		section {
+			margin-left: 10px;
+		}
 	</style>
 </head>
 
