@@ -12,7 +12,7 @@
 
     <c:param name="content">
         <%-- ログアウトメッセージとリンク --%>
-    	<h2>ログアウト</h2>
+    	<h2 class="page-title">ログアウト</h2>
     	<div>ログアウトしました</div>
     	<a href="../Login.action">ログイン</a>
 	</c:param>

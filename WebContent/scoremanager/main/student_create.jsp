@@ -13,7 +13,7 @@
 
 <c:import url="/common/base.jsp">
 	<c:param name="title">
-		<h2>学生情報登録</h2>
+		<h2 class="page-title">学生情報登録</h2>
 	</c:param>
 
 	<c:param name="content">

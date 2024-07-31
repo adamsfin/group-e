@@ -5,9 +5,7 @@
 <% request.setCharacterEncoding("UTF-8"); %>
 <c:import url="/common/base.jsp">
 	<c:param name="title">
-		<h2 class="h3 mb-3 fw-norma bg-secondary bg-opacity-10 py-2 px-4">退学者一覧</h2>
-		<a href="Menu.action">メニュー</a>
-		<a href="scoremanager.main.StudentList.action">学生一覧</a>
+		<h2 class="page-title">退学者一覧</h2>
 	</c:param>
 
 	<c:param name="scripts">
