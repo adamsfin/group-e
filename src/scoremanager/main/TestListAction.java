@@ -14,8 +14,8 @@ import dao.StudentDao;
 import dao.SubjectDao;
 import dao.TestListStudentDao;
 import dao.TestListSubjectDao;
-import scoremanager.Util;
 import tool.Action;
+import tool.Util;
 
 public class TestListAction extends Action {
 

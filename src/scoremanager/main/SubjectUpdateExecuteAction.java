@@ -5,8 +5,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import bean.Subject; // beanパッケージからSubjectクラスをインポート
 import dao.SubjectDao; // daoパッケージからSubjectDaoクラスをインポート
-import scoremanager.Util; // scoremanagerパッケージからUtilクラスをインポート
 import tool.Action; // toolパッケージからActionクラスをインポート
+import tool.Util;
 
 public class SubjectUpdateExecuteAction extends Action {
 

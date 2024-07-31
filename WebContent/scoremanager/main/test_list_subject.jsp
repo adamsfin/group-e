@@ -9,7 +9,7 @@
 	List<TestListSubject> list = (List<TestListSubject>)request.getAttribute("testListSub");
 %>
 
-<table>
+<table class="table table-hover">
 	<tr class="list_header">
 		<th>入学年度</th><th>クラス</th><th>学生番号</th><th>氏名</th><th>１回</th><th>２回</th>
 	</tr>

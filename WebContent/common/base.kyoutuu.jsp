@@ -1,5 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!DOCTYPE html>
 <html>
@@ -13,6 +14,13 @@
 			<h1 class="toptitle">
 				<span class="highlight">得点管理システム</span>
 			</h1>
+			<c:if test="${!empty user}">
+				<!-- 教師の名前を表示 -->
+				<div class="header-right">
+					<span>${user.name}&nbsp;様&nbsp;&nbsp;&nbsp;</span>
+					<a href="Logout.action">ログアウト</a>
+				</div>
+			</c:if>
 		</header>
 
 		<!-- メインコンテンツ -->

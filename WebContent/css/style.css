@@ -1,3 +1,10 @@
+/* 全体のスタイル */
+html, body {
+    height: 100%; /* ビューポートの高さを100%に設定 */
+    margin: 0; /* デフォルトの余白を削除 */
+}
+
+/* トップタイトル */
 .toptitle {
     background-color: skyblue;
     text-align: center;
@@ -5,36 +12,25 @@
     margin: 0;
 }
 
-/* サイドバーのスタイル */
+/* サイドバー全体のスタイル */
 .sidebar {
     float: left;
     width: 25%; /* サイドバーの幅 */
     padding: 20px;
     background-color: #f0f0f0; /* 背景色 */
     text-align: left; /* テキストを左寄せにする */
-
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    margin-right: 20px; /* サイドバーとメインコンテンツの間隔 */
+    margin-top: 47px;
 }
-.sidebar .score-gakusei-link ul.sub-menu {
-    margin-top: 10px; /* 任意のスペース */
-    margin-left: 15px;
-}
-
-.sidebar .score-seiseki-link ul.sub-menu {
-    margin-top: 10px; /* 任意のスペース */
-    margin-left: 15px;
-}
-
-.sidebar .score-kamoku-link ul.sub-menu  {
-    margin-top: 10px; /* 任意のスペース */
-    margin-left: 15px;
-}
-
 
 .sidebar h3 {
     margin-bottom: 10px;
     font-size: 18px;
 }
 
+/* サイドバーのリストスタイル */
 .sidebar ul {
     list-style-type: none;
     padding: 0;
@@ -47,90 +43,51 @@
 .sidebar ul li a {
     text-decoration: none;
     color: #333; /* リンクの色 */
+    font-size: 16px;
 }
 
 .sidebar ul li a:hover {
     color: #555; /* マウスオーバー時の色 */
 }
 
-/* メインコンテンツのスタイル */
-.main-content {
-    margin-left: 25%; /* サイドバーの幅に合わせて調整 */
-    padding: 20px;
+/* サイドバーのサブメニュー */
+.sidebar .sub-menu {
+    margin-top: 10px; /* 任意のスペース */
+    margin-left: 15px;
+    list-style-type: none;
+    padding: 0;
+    display: none;
 }
 
-/* メニュー項目のスタイル */
-.menu {
-    display: flex;
-    justify-content: center; /* 中央揃え */
-    margin-top: 10px;
+.sidebar .sub-menu li {
+    margin-bottom: 5px;
 }
 
-.menu-item {
-    margin: 10px;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    color: #333;
-    transition: background-color 0.3s ease;
+.sidebar .sub-menu li a {
+    color: #007bff;
+    font-size: 14px;
 }
 
-.menu-item a {
-    display: block;
-    padding: 10px;
-    background-color: #f4f4f4; /* メニューの背景色 */
-    color: #333; /* メニューテキストの色 */
-    text-decoration: none;
-}
-
-
-.menu-item a:hover {
-    background-color: #ddd; /* マウスオーバー時の背景色 */
-}
-
-/* 学生管理のスタイル */
-.student-management {
-    border: 2px solid red;
-}
-
-/* 成績管理のスタイル */
-.score-management {
-    border: 2px solid green;
-}
-
-/* 科目管理のスタイル */
-.subject-management {
-    border: 2px solid blue;
+.sidebar .sub-menu li a:hover {
+    text-decoration: underline;
 }
 
 /* フッターのスタイル */
 footer {
-    background-color: #d3d3d3; /* フッターの背景色 */
-    text-align: center;
-    padding: 10px 0;
-    width: 100%;
-    bottom: 0;
+    background-color: #d3d3d3; /* フッターの背景色: ライトグレー */
+    text-align: center;         /* テキストを中央揃え */
+    padding: 10px 0;            /* 上下に10pxの余白を設定 */
+    width: 100%;                 /* フッターの幅を画面全体に合わせる */
+	position: fixed; /* ページの下部に固定 */
+    bottom: 0;                  /* フッターを画面の一番下に固定 (positionプロパティが必要) */
 }
 
 footer p {
-    margin: 0;
-    color: #333;
-    font-size: 14px;
+    margin: 0;                  /* フッター内の<p>タグの外側の余白をゼロに設定 */
+    color: #333;                /* テキストの色: ダークグレー */
+    font-size: 14px;            /* テキストのサイズ: 14px */
 }
 
-/* ページ全体のスタイル */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    margin: 0;
-    padding: 0;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 20px auto;
-    text-align: center;
-}
 
 
 /* フォームのスタイル */
@@ -150,7 +107,7 @@ body {
     box-sizing: border-box;
 }
 
-
+/* フィルタボックスのスタイル */
 #filter {
     display: flex;
     flex-wrap: wrap;
@@ -189,7 +146,8 @@ label {
     margin-top: 10px;
 }
 
-#filter .col-4, #filter .col-2 {
+#filter .col-4,
+#filter .col-2 {
     padding-left: 0;
     padding-right: 0;
 }
@@ -199,187 +157,53 @@ label {
     margin-bottom: 4px;
 }
 
-
-/* スタイル全体 */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f8f8;
-    margin: 0;
-    padding: 0;
-}
-
-h1.toptitle {
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 20px;
-    text-align: center;
-    background-color: #cceeff;
-    padding: 20px;
-}
-
-h2 {
-    font-size: 20px;
-    color: #333;
-    margin: 20px 0;
-}
-
-h3 {
-    font-size: 18px;
-    color: #666;
-    margin: 10px 0;
-}
-
-/* コンテナ */
-.container {
-    width: 80%;
-    margin: 0 auto;
-}
-
-/* メインコンテンツ */
-.test_search_form {
-    margin-left: 220px;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-.centered-heading {
-    font-size: 28px;
-    text-align: center;
-}
-
-.test_search_form form {
-    margin-bottom: 20px;
-}
-
-.test_search_form label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-.test_search_form select,
-.test_search_form input[type="text"],
-.test_search_form input[type="submit"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-.test_search_form input[type="submit"] {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-}
-
-.test_search_form input[type="submit"]:hover {
-    background-color: #0056b3;
-}
-
-.input_val_error, .none_list_error {
-    color: red;
-    font-weight: bold;
-}
-
-p {
-    font-size: 14px;
-    color: #666;
-}
-
-/* ログイン画面*/
-.login {
-	width: 550px;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 15px;
-	margin-bottom: 20px;
-	padding: 18px 30px 20px;
-	background-color: #ffffff;
-	border: 0.5px solid #ccc;
-	border-radius: 5px;
-}
-
-.login-title {
-	text-align: center;
-	margin: 0;
-	font-size: 28px;
-}
-
-label[for="id"],
-label[for="password"] {
-	margin: 5px 0 5px;
-}
-
-input[name="id"],
-input[name="password"] {
-	width: 100%;
-	padding: 10px;
-	margin-bottom: 5px;
-	border: 0.5px solid #ccc;
-	border-radius: 4px;
-}
-
-label[for="chk_d_ps"] {
-	display: block;
-	text-align: center;
-	margin: 8px 0 12px;
-}
-
-input[name="login"] {
-	display: block;
-	margin: auto;
-	width: 35%;
-	padding: 10px;
-	background-color: #007bff;
-	color: #ffffff;
-	border: none;
-	border-radius: 6px;
-	cursor: pointer;
-}
-
-input[name="login"]:hover {
-	background-color: #0064FF;
-}
-
-.login p {
-	text-align: center;
-	color: red;
-}
-
-
+/* ヘッダー(ユーザ名、ログアウトリンク) */
 .header-right {
-  position: fixed; /* 固定位置にする */
-  top: 0; /* 上から0px */
-  right: 0; /* 右から0px */
-  padding: 10px; /* パディングを追加して見やすくする */
-  background-color: #f8f9fa; /* 背景色を追加（オプション） */
-  border-bottom: 1px solid #ddd; /* 下に線を追加（オプション） */
-  z-index: 1000; /* 他の要素より上に表示するためのZ-index */
+    position: fixed; /* 固定位置にする */
+    top: 0; /* 上から0px */
+    right: 0; /* 右から0px */
+    padding: 10px; /* パディングを追加して見やすくする */
+    background-color: #f8f9fa; /* 背景色を追加（オプション） */
+    border-bottom: 1px solid #ddd; /* 下に線を追加（オプション） */
+    z-index: 1000; /* 他の要素より上に表示するためのZ-index */
 }
 
 .header-right span {
-  margin-right: 10px; /* ログアウトリンクとの間隔を調整 */
+    margin-right: 10px; /* ログアウトリンクとの間隔を調整 */
 }
 
 .header-right a {
-  text-decoration: none; /* リンクの下線を削除 */
-  color: #007bff; /* リンクの色を指定 */
+    text-decoration: none; /* リンクの下線を削除 */
+    color: #007bff; /* リンクの色を指定 */
 }
 
 .header-right a:hover {
-  text-decoration: underline; /* ホバー時に下線を表示 */
+    text-decoration: underline; /* ホバー時に下線を表示 */
 }
+
 
 /* テーブルのデザイン */
 .table {
-	border-spacing: 0;
+    border-spacing: 0;
 }
 
 .table th, .table td {
-	border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
     padding: 10px;
 }
 
+/* ページタイトル */
+.page-title {
+	background-color: #DDDDDD;
+	margin: 10px 70px 10px 380px;
+	font-size: 28px;
+	padding: 8px 24px;
+	text-align: left;
+}
+
+/* コンテンツ */
+.contents {
+	width: 800px;
+	margin-left: 380px;
+	padding-bottom: 60px;
+}
