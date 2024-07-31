@@ -8,7 +8,7 @@
 
 <c:if test="${testListStu!=null}">
 
-	<table>
+	<table class="table table-hover">
 		<tr class="list_header">
 			<th>科目名</th><th>科目コード</th><th>回数</th><th>点数</th>
 		</tr>

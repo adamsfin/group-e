@@ -18,7 +18,7 @@
 
 	<c:param name="content">
 		<!-- メインコンテンツ -->
-		<div class="main-content">
+		<div class="contents">
 
 			<section class="me-4">
 
@@ -38,13 +38,13 @@
 
 						<div class="col-4">
 							<label class="form-label" for="student-id">学生番号</label>
-							<input type="text" class="form-control" id="student-no" name="no" value="${no}" maxlength="10" required>
+							<input type="text" class="form-control" id="student-no" name="no" value="${no}" maxlength="10" placeholder="学生番号を入力してください" required>
 							<div class="no_error">${no_error}</div>
 						</div>
 
 						<div class="col-4">
 							<label class="form-label" for="student-name">氏名</label>
-							<input type="text" class="form-control" id="student-name" name="name" value="${name}" maxlength="10" required>
+							<input type="text" class="form-control" id="student-name" name="name" value="${name}" maxlength="10" placeholder="氏名を入力してください" required>
 						</div>
 
 						<div class="col-4">
@@ -61,7 +61,7 @@
 						</div>
 					</div>
 				</form>
-
+				<a href="StudentList.action">戻る</a>
 			</section>
 		</div>
 	</c:param>

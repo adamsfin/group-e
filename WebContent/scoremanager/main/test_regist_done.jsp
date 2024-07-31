@@ -10,9 +10,11 @@
 	<c:param name="scripts"></c:param>
 
 	<c:param name="content">
-		<p>登録が完了しました</p>
-		<a href="TestRegist.action">戻る</a>
-		<a href="TestList.action">成績参照</a>
+		<div class="contents">
+			<p>登録が完了しました</p>
+			<a href="TestRegist.action">戻る</a>
+			<a href="TestList.action">成績参照</a>
+		</div>
 	</c:param>
 
 </c:import>

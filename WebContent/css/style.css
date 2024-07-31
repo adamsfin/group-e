@@ -205,5 +205,5 @@ label {
 .contents {
 	width: 800px;
 	margin-left: 380px;
-	overflow: hidden;
+	padding-bottom: 60px;
 }
