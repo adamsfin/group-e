@@ -9,7 +9,6 @@
 
 
     <c:param name="scripts"></c:param>
-
     <c:param name="content">
         <%-- ログアウトメッセージとリンク --%>
     	<h2> ログアウト</h2>
