@@ -161,6 +161,24 @@ public class SubjectDao extends Dao {
 
 		try {
 			statement = connection.prepareStatement(
+				"delete from test where subject_cd=?");
+			statement.setString(1, subject.getCd());
+
+			statement.executeUpdate();
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			if (statement != null) {
+				try {
+					statement.close();
+				} catch (SQLException sqle) {
+					throw sqle;
+				}
+			}
+		}
+
+		try {
+			statement = connection.prepareStatement(
 				"delete from subject where cd=?");
 			statement.setString(1, subject.getCd());
 
