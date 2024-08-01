@@ -33,13 +33,13 @@
 									<option value=<%= year %>><%= year %>
 								<% } %>
 							</select>
-							<div class="entYear_error">${year_error}</div>
+							<div class="entYear_error text-warning">${year_error}</div>
 						</div>
 
 						<div class="col-4">
 							<label class="form-label" for="student-id">学生番号</label>
 							<input type="text" class="form-control" id="student-no" name="no" value="${no}" maxlength="10" placeholder="学生番号を入力してください" required>
-							<div class="no_error">${no_error}</div>
+							<div class="no_error text-warning">${no_error}</div>
 						</div>
 
 						<div class="col-4">
